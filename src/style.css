@@ -1,0 +1,38 @@
+*{
+    background:linear-gradient(160deg, #7EA94C, #A2B36B);
+    background-attachment: fixed;
+}
+
+body{
+
+    /*background-repeat: no-repeat;*/
+    /* display: flex; */
+    font-family: 'Oxygen', sans-serif;
+}
+
+.image{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: top 200px;
+    width: 25em;
+
+}
+
+.session{
+    display:flex;
+    justify-content:space-around;
+    align-items: center;
+
+}
+.buttonSession{
+    border: none;
+    color:white;
+    /* background-color: green; */
+    font-size: .7em;
+    letter-spacing: 2px;
+    font-family: 'Oxygen', sans-serif;
+
+}
+
