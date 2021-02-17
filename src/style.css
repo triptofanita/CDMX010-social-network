@@ -1,20 +1,26 @@
 *{
-    background:linear-gradient(160deg, #7EA94C, #A2B36B);
+    background:#DFF0F2;
     background-attachment: fixed;
 }
-
 body{
-
-    /*background-repeat: no-repeat;*/
-    /* display: flex; */
     font-family: 'Oxygen', sans-serif;
 }
-
-.image{
+header{
+    font-family: 'Amatic SC', cursive;
+    color:#0E4A21;
+    text-align: center;
+    font-size: 40px;
+}
+.containerImg{
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
+
+}
+
+.image{
     align-items: center;
+    justify-content: center;
     margin: top 200px;
     width: 25em;
 
@@ -22,17 +28,30 @@ body{
 
 .session{
     display:flex;
-    justify-content:space-around;
+    /* justify-content:space-around; */
+    justify-content:center;
     align-items: center;
+    flex-flow: row wrap;
+
 
 }
 .buttonSession{
     border: none;
+    background-color: #3E8C5A;
     color:white;
-    /* background-color: green; */
     font-size: .7em;
     letter-spacing: 2px;
     font-family: 'Oxygen', sans-serif;
+    display:flex;
+    flex-flow: row wrap;
+    justify-content:space-between;
+    align-items: center;
+    /* position: absolute; */
+    width: 140px;
+    height: 50px;
+    /* left: 40px;
+    top: 526px; */
+    border-radius: 25px;
 
 }
 
