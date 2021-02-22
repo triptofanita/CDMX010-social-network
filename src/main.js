@@ -1,18 +1,15 @@
 // Este es el punto de entrada de tu aplicacion
+// import { myFunction } from './lib/index.js';
+import { onNavigate } from './app.js';
+// import { home } from './components/home.js';
+import { about } from './components/about.js';
 
-import { myFunction} from './lib/index.js';
+const buttonAbout = document.querySelector('.btnConocenos');
+buttonAbout.addEventListener('click', () => {
+  const infoAbout = onNavigate(about);
+});
 
-myFunction();
-// evento DOM  PROMESAS
-// fetch
-// catch
-// try
-// if else
-
-// actualizar el DOM con el nuevo contenido, innerHTML
-// const rootDiv = document.getElementById('root');
-// rootDiv.innerHTML = routes[window.location.pathname];
-
-// window.onpopstate = () => {
-//   rootDiv.innerHTML = routes[window.location.pathname];
-// };
+// const containerHome = document.getElementById('root');
+// let emptyHome = '';
+// emptyHome += onNavigate(home);
+// containerHome.innerHTML = emptyHome;
