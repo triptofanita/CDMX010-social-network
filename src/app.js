@@ -15,3 +15,7 @@ export const onNavigate = (pathname) => {
 window.onpopstate = () => {
   rootDiv.innerHTML = routes[window.location.pathname];
 };
+
+// window.onpopstate = () => {
+//   rootDiv.innerHTML = routes[window.location.pathname];
+// };
