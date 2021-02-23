@@ -4,9 +4,9 @@ import { onNavigate } from './app.js';
 // import { home } from './components/home.js';
 import { about } from './components/about.js';
 
-const buttonAbout = document.querySelector('.btnConocenos');
+const buttonAbout = document.querySelector('.moreInfo');
 buttonAbout.addEventListener('click', () => {
-  const infoAbout = onNavigate(about);
+  const infoAbout = onNavigate('/about');
 });
 
 // const containerHome = document.getElementById('root');
