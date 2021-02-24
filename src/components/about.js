@@ -1,6 +1,6 @@
 export const about = `
   <div class= "aboutContainer">
-  <a class="iconBack" href="#">retorna a pantalla home</a>
+  <a class="back" id="iconBack" href="#"> <- </a>
   <hr>
     <div class = "aboutText">
       <p> Eco App es una comunidad de usuarios interesados en compartir iniciativas y experiencias vinculadas a la ecología y al desarrollo sostenible.
