@@ -3,18 +3,24 @@
 import { onNavigate } from './app.js';
 import { home } from './components/home.js';
 import { about } from './components/about.js';
+import { signUp } from './components/signup.js';
 
+
+//evento para conócenos
 const buttonAbout = document.querySelector('.moreInfo');
 buttonAbout.addEventListener('click', () => {
   const infoAbout = onNavigate('/about');
 });
 
-// const buttonBack = document.querySelector('.iconBack');
-// buttonBack.addEventListener('click', ()=>{
-//   const backHome = onNavigate('/');
-// });
+// evento para botón registrate
+const buttonSignUp = document.querySelector('.buttonSignUp');
+buttonSignUp.addEventListener('click', () => {
+  const infoUser = onNavigate('/signUp');
+});
 
-// const containerHome = document.getElementById('root');
-// let emptyHome = '';
-// emptyHome += onNavigate(home);
-// containerHome.innerHTML = emptyHome;
+
+// //evento para botón regresar a home
+// const buttonBack = document.querySelector('.back');
+// buttonBack.addEventListener('click', () => {
+//   window.history.back();
+// });

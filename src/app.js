@@ -12,8 +12,12 @@ export const onNavigate = (pathname) => {
   );
 };
 
+
+//window.addEventListener('popstate', e => {
+  //console.log('popstate', history.state);
+//});
 window.onpopstate = () => {
-  rootDiv.innerHTML = routes[window.location.pathname];
+rootDiv.innerHTML = routes[window.location.pathname];
 };
 
 // window.onpopstate = () => {

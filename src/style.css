@@ -42,7 +42,8 @@ h1{
     align-items: center;
     height: 100px;
 }
-.buttonSession{
+.buttonSignUp,
+.buttonLogin{
     border: none;
     background-color: #3E8C5A;
     color:white;
@@ -56,7 +57,7 @@ h1{
     /* left: 40px;
     top: 526px; */
     border-radius: 25px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
 .moreInfo{
@@ -78,20 +79,19 @@ h1{
 .aboutContainer{
     display: flex;
     flex-direction: column;
-    /* justify-content: space-around; */
-    /* align-content: center; */
     align-items: center;
-    height: 90%;
-    width: 90%;
     background-color: rgb(255, 255, 255);
+    margin: 100px, 15px, 100px, 15px;
 }
 
-.iconBack {
-    font-family: 'Oxygen';
+.back {
+    display: flex;
+    font-family: 'Oxygen', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 25px;
-    align-content: flex-start;
+    background:none;
+    text-decoration:none;
 }
 
 hr {
@@ -103,29 +103,123 @@ hr {
 .aboutText {
     display: flex;
     justify-content: center;
-    align-content:center;
-    align-items: center;
-    text-align: center;
     background-color: white;
 }
 .aboutText p {
     padding: .5em;
-    font-family: 'Oxygen';
+    font-family: 'Oxygen', sans-serif;
     text-align: justify ;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
     line-height: 23px;
     background-color: white;
+    width: 70%;
+    height: 90%;
 }
 /*div contenedor de la imagen planta*/
 .aboutImgContainer {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+    margin-top: 250px;
 }
 /*imagen about*/
 .aboutImage {
     width: 5em;
     background-color:white;
+    padding: 50px;
 }
+/*titulos de registro*/
+.signUpText{
+    font-family: 'Oxygen', sans-serif;
+    font-size: 15px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.signUpText h2{
+    font-family: 'Oxygen', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 5px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.signUpText h3{
+    font-family: 'Oxygen', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 5px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+/* //Inputs */
+
+.dataNewUser{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.nameNewUser,
+.mailNewUser,
+.passwordNewUser{
+    background: #FFFFFF;
+    width: 280px;
+    height: 50px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    border:none;
+    border-radius: 6px;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 20px;
+    color: #8B8383;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    padding: .1rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+/* div botones Sign Up */
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+
+}
+
+/* botones Sign Up */
+.buttonFacebook ,
+.buttonGoogle{
+    font-family: 'Oxygen', sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    width: 18rem;
+    height: 3.1rem;
+    margin: 10px;
+    text-align: center;
+    border: none;
+    background: #3E8C5A;
+    border-radius: 25px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: .5rem;
+    margin-top: .5rem;
+}
+/* Correo electrónico */
+
+/* Correo electrónico */
+
+
