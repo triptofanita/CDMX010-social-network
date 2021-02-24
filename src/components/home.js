@@ -8,7 +8,7 @@ export const home = `
   <button class="buttonSession" id="login">Regístrate</button>
   </div>
   <div>
-  // <a class="moreInfo" href="#about" onclick="onNavigate('/about'); return false;">Conócenos</a>
+  <a class="moreInfo" href="#">Conócenos</a>
   </div>
   </div>
   `;

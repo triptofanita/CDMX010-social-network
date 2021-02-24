@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="font.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
   <title>Red Social</title>
@@ -14,9 +15,21 @@
     <h1>ECO APP</h1>
   </header>
   <main>
-    <a class="btnConocenos" href="#" onclick="onNavigate('/about'); return false;">About</a>
-    <!-- <a href="#" onclick="onNavigate('/'); return false;">Home</a> -->
-    <div id="root"></div>
+    <!-- <a class="btnConocenos" href="#">About</a> -->
+    <div id="root">
+      <!-- <div class ="signUp">
+        <div class ="signUpText">
+          <h1>¡Regístrate!</h1>
+          <h2>Es rápido y fácil</h2>
+        </div>
+      <div class="dataNewUser">
+          <input type="text" id="nameNewUser" class="nameNewUser" placeholder="Nombre"> </input>
+          <input type="text" id="mailNewUser" class="mailNewUser" placeholder="Correo"> </input>
+          <input type="text" id="passwordNewUser" class="passwordNewUser" placeholder="Contraseña"> </input>
+      </div>
+          <div class="fb-login-button" data-width="130px" data-size="small" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
+          <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
+    </div>
   </main>
   <footer>
   </footer>
@@ -24,9 +37,5 @@
   <script type="module" src="app.js"></script>
   <script type="module" src="lib/index.js"></script>
   <script type="module" src="lib/routes.js"></script>
-  <!-- <script type="module" src="components/about.js"></script>
-  <script type="module" src="components/home.js"></script>
-  <script type="module" src="components/login.js"></script>
-  <script type="module" src="components/signup.js"></script> -->
-</body>
+  </body>
 </html>
