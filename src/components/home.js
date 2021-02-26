@@ -1,5 +1,4 @@
 import { onNavigate } from '../lib/routes.js';
-//import { about } from './about';
 
 export const home = `
 <header>
@@ -19,21 +18,21 @@ export const home = `
     </div>
     `;
 
-document.addEventListener('click', (e) =>{
-    if (e.target.matches('.moreInfo')){
-        console.log("Dirige a about");
-        // about();
-        e.preventDefault();
-        onNavigate('/about');
-    }
-    if (e.target.matches('.buttonLogin')){
-        console.log("Dirige a Iniciar sesión");
-        // logIn();
-        onNavigate('/login');
-    }
-    if (e.target.matches('.buttonSignUp')){
-        console.log("Dirige a Regístrate");
-        // signUp();
-        onNavigate('/signUp');
-    }
+document.addEventListener('click', (e) => {
+  if (e.target.matches('.moreInfo')) {
+    console.log('Dirige a about');
+    // about();
+    e.preventDefault();
+    onNavigate('/about');
+  }
+  if (e.target.matches('.buttonLogin')) {
+    console.log('Dirige a Iniciar sesión');
+    // logIn();
+    onNavigate('/login');
+  }
+  if (e.target.matches('.buttonSignUp')) {
+    console.log('Dirige a Regístrate');
+    // signUp();
+    onNavigate('/signUp');
+  }
 });
