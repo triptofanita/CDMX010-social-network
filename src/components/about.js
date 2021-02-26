@@ -11,11 +11,11 @@ export const about = `
     </div>
   </div>
 `;
-document.addEventListener('click', (e) =>{
-  if (e.target.matches('.back')){
-      console.log("Dirige a home");
-      // about();
-      e.preventDefault();
-      onNavigate("/");
+document.addEventListener('click', (e) => {
+  if (e.target.matches('.back')) {
+    console.log('Dirige a home');
+    // about();
+    e.preventDefault();
+    onNavigate('/');
   }
 });
