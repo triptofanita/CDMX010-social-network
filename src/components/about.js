@@ -7,7 +7,15 @@ export const about = `
       ¡Únete a esta comunidad y empieza a compartir tus ideas y tips para salvar al planeta!</p>
     </div>
     <div class= "aboutImgContainer">
-      <img class="aboutImage" src="img/growing-plant-svgrepo.svg"></img>
+      <img class="aboutImage" src="assets/img/growing-plant-svgrepo.svg"></img>
     </div>
   </div>
 `;
+document.addEventListener('click', (e) =>{
+  if (e.target.matches('.back')){
+      console.log("Dirige a home");
+      // about();
+      e.preventDefault();
+      onNavigate("/");
+  }
+});
