@@ -205,7 +205,8 @@ hr {
 /* botones Sign Up */
 .buttonFacebook ,
 .buttonGoogle,
-.buttonSend{
+.buttonSend,
+.buttonLogGoogle{
     font-family: 'Oxygen', sans-serif;
     font-size: 18px;
     text-decoration: none;
