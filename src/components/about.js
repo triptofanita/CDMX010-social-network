@@ -11,6 +11,7 @@ export const about = `
     </div>
   </div>
 `;
+
 document.addEventListener('click', (e) => {
   if (e.target.matches('.back')) {
     console.log('Dirige a home');
