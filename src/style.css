@@ -313,3 +313,127 @@ hr {
     font-size: 18px;
     line-height: 23px;
 }
+
+/*Diseño del timeline*/
+
+/* header */
+.headTimeline{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: 90%;
+  margin-left:5%;
+  margin-right:5%;
+}
+
+.iconApp{
+  width: 90px;
+  height: auto;
+}
+
+.iconUser{
+    width:60px;
+    height: auto;
+
+}
+/*Crear post*/
+.textAreaPost{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-flow: column wrap;
+  width: 90%;
+  height: 150px;
+  margin-left:5%;
+  margin-right:5%;
+  background: #79C1BD;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+}
+
+.textPost{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+
+}
+
+.buttonNewPost{
+  display:flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  justify-content: center;
+  width: 80px;
+  margin-top: 10px;
+  background: #E3F2F4;
+  border: none;
+  border-radius: 25px;
+}
+
+/*Menu de navegación*/
+.menuNavigate{
+    display:flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: fixed;
+    width:80%;
+    height:20%;
+    margin-left:10%;
+    margin-right:10%;
+    margin-top:120px;
+}
+
+.menuImg{
+    width: 32px;
+    padding: 32px;
+}
+
+/* old Post, timeline*/
+.oldPost{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-flow: column wrap;
+  width: 90%;
+  margin-top: 5%;
+  margin-left:5%;
+  margin-right:5%;
+}
+
+.textOldPost{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background: #FFFFFF;
+}
+
+.textOldPost p{
+  background: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+/* div de menú de los post*/
+.oldPostMenu{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    background: #FFFFFF;
+    box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+
+
+}
+.likeImg, p, .editText, .deleteText{
+  background: #FFFFFF;
+}
+.likeImg{
+    width:20px;
+    height: auto;
+}

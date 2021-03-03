@@ -46,10 +46,10 @@ document.addEventListener('click', (e) => {
         // const emailVerified = user.emailVerified;
         // const email = user.email;
         alert(`estas logueado, ${user.email}`);
-        onNavigate('/profile');
+        onNavigate('/timeline');
         console.log(user);
       } else {
-        alert('no estas logueado');
+        alert('tu correo aun no está validado');
       }
     });
   }
