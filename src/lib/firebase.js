@@ -1,3 +1,6 @@
+// import firebase from 'firebase/app';
+// import 'firebase/firestore';
+
 const firebaseConfig = {
   apiKey: 'AIzaSyBf_eRK2Cq3fWDgb36pHjg5n_J-soF4HXI',
   authDomain: 'eco-app-73c81.firebaseapp.com',
@@ -7,5 +10,8 @@ const firebaseConfig = {
   appId: '1:408430283117:web:a051107bcd0ad980b0f264',
 };
 firebase.initializeApp(firebaseConfig);
+// const store = fireb.firestore();
+// const auth = fireb.auth();
 
+// export { store, auth };
 export default firebase;

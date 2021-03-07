@@ -1,3 +1,5 @@
+import { onNavigate } from '../lib/routes.js';
+
 export const profile = `
 <h1>Hola, este es tu perfil o muro </h1>
 <p>podras mirar lo que solo tu escribes</p>
@@ -13,24 +15,27 @@ export const profile = `
 // para cerrar sesión
 document.addEventListener('click', (e) => {
   if (e.target.matches('#close')) {
-      firebase.auth().signOut()
+    firebase
+      .auth()
+      .signOut()
       .then(() => {
-          alert('Sign-out successful');
-          onNavigate('/');
-      }).catch((error) => {
-          alert(`An error happened , ${error}`);
+        alert('Sign-out successful');
+        onNavigate('/');
+      })
+      .catch((error) => {
+        alert(`An error happened , ${error}`);
       });
   } // si manda a la pantalla perfil
   if (e.target.matches('#goProfile')) {
-      console.log('Dirige al perfil');
-      onNavigate('/profile');
+    console.log('Dirige al perfil');
+    onNavigate('/profile');
   }
   if (e.target.matches('#goGroups')) {
-      console.log('Dirige al timeline');
-      onNavigate('/groups');
+    console.log('Dirige al timeline');
+    onNavigate('/groups');
   }
   if (e.target.matches('#goTimeline')) {
-      console.log('Dirige al timeline');
-      onNavigate('/timeline');
+    console.log('Dirige al timeline');
+    onNavigate('/timeline');
   }
 });

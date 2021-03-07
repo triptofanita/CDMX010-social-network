@@ -1,3 +1,5 @@
+import { onNavigate } from '../lib/routes.js';
+
 export const about = `
   <div class= "aboutContainer">
   <a class="back" id="iconBack" href="#"> <- </a>

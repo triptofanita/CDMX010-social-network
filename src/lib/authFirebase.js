@@ -1,40 +1,86 @@
-// registro con email y contraseña
-// crear nuevo usuario con email y contraseña
+import { onNavigate } from './routes.js';
+
+// función para registrar usuario con email y contraseña
 export const createNewUser = () => {
   const email = document.querySelector('#mailNewUser').value;
   const password = document.querySelector('#passwordNewUser').value;
-
+  console.log(`${email + password}`);
   firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((result) => {
-      console.log(`Signed in, ${result}`);
+    .then((user) => {
+      console.log(user.user);
+      if (user.user.emailVerified === true) {
+        onNavigate('/timeline');
+      } else {
+        onNavigate('/emailVerification');
+      }
     })
     .catch((error) => {
       const errorMessage = error.message;
       console.log(`opss, ${errorMessage}`);
     });
+  // añadiendo este .then se enviaba el correo de validación automaticamente
+  // .then((res) => {
+  //   userValidation();
+  // });
 };
 
-// observador que nos diga sobre el email verificado
+// función para loguear con correo y contraseña
+export const loginUser = () => {
+  const emailUser = document.querySelector('#mailUser').value;
+  const passwordUser = document.querySelector('#passwordUser').value;
+  console.log(emailUser);
+  console.log(passwordUser);
+  firebase.auth().signInWithEmailAndPassword(emailUser, passwordUser)
+    .then((user) => {
+      console.log(user.user);
+      if (user.user.emailVerified) {
+        onNavigate('/timeline');
+      } else {
+        onNavigate('/emailVerification');
+      }
+    })
+    .catch((error) => {
+      // const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorMessage);
+    });
+};
+// observador que nos diga sobre el email verificado o usuario logueado
 export const stateObserver = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
+      const email = user.email;
       const emailVerified = user.emailVerified;
-      const textVerified = '';
+      let textVerified = '';
       if (emailVerified === false) {
-        document.querySelector('.errorAlert').innerHTML = `
-        <p>tu correo no esta, ${user.emailVerified} </p>`;
+        textVerified = 'email no verificado';
       } else {
-        document.querySelector('.errorAlert').innerHTML = `
-        <p>tu correo esta, ${textVerified} </p>`;
+        textVerified = 'email verificado';
       }
+      document.querySelector('.errorAlert').innerHTML = `
+      logueado, ${email} + ${textVerified}`;
     } else {
-      // template para que diga que esta incorrect
-      alert('oops, algo malo pasó');
+      document.querySelector('.errorAlert').innerHTML = `
+      no estas logueado`;
     }
   });
 };
+// función para enviar correo de validación
+export const userValidation = () => {
+  const user = firebase.auth().currentUser;
+  user.sendEmailVerification()
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((er) => {
+      console.log(er);
+    });
+};
 
 // autentificación con cuenta google
+
+// para validar el correo del usuario
+
 // export const googleSignIn = () => {
 //   const provider = new firebase.auth.GoogleAuthProvider();
 //   firebase.auth().signInWithRedirect(provider)
