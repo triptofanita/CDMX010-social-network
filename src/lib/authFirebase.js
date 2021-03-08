@@ -78,28 +78,25 @@ export const userValidation = () => {
 };
 
 // autentificación con cuenta google
-
-// para validar el correo del usuario
-
-// export const googleSignIn = () => {
-//   const provider = new firebase.auth.GoogleAuthProvider();
-//   firebase.auth().signInWithRedirect(provider)
-//     .then((result) => {
-//       if (result.credential) {
-//         const credential = result.credential;
-//         // // This gives you a Google Access Token. You can use it to access the Google API.
-//         // const token = credential.accessToken;
-//         // // ...
-//         console.log(`estas dentro, ${credential}`);
-//       }
-//       // The signed-in user info.
-//       const user = result.user;
-//     }).catch((error) => {
-//       const errorMessage = error.message;
-//       console.log(`el email es, ${errorMessage}`);
-//       // The email of the user's account used.
-//       const email = error.email;
-//       console.log(`el email es, ${email}`);
-//       // ...
-//     });
-// };
+export const googleSignIn = () => {
+  const provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithRedirect(provider)
+    .then((result) => {
+      if (result.credential) {
+        const credential = result.credential;
+        // // This gives you a Google Access Token. You can use it to access the Google API.
+        // const token = credential.accessToken;
+        // // ...
+        console.log(`estas dentro, ${credential}`);
+      }
+      // The signed-in user info.
+      const user = result.user;
+    }).catch((error) => {
+      const errorMessage = error.message;
+      console.log(`el email es, ${errorMessage}`);
+      // The email of the user's account used.
+      const email = error.email;
+      console.log(`el email es, ${email}`);
+      // ...
+    });
+};

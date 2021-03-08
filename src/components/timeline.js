@@ -13,6 +13,7 @@ export const timeline = `
 <button class="buttonNewPost" id="buttonNewPost"> Compartir </button>
 </div>
 <div class="oldPost">
+<div class="newPost"></div>
 <div class="textOldPost">
   <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
