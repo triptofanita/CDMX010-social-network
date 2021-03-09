@@ -7,7 +7,7 @@ export const login = `
             <h3>ECO APP</h3>
         </div>
         <div class="dataUser">
-            <input type="text" id="mailUser" class="mailUser" placeholder="Escribe tu correo"> </input>
+            <input type="text" id="mailUser" class="mailUser" placeholder="Escribe tu correo" autofocus> </input>
             <input type="password" id="passwordUser" class="passwordUser" placeholder="Contraseña"> </input>
         </div>
         <div class="buttonLogContainer">

@@ -1,3 +1,4 @@
+// debugger
 const firebaseConfig = {
   apiKey: 'AIzaSyBf_eRK2Cq3fWDgb36pHjg5n_J-soF4HXI',
   authDomain: 'eco-app-73c81.firebaseapp.com',
@@ -9,6 +10,6 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 export const auth = firebase.auth();
-export const db = firebase.firestore();
+export const store = firebase.firestore();
 
 export default firebase;

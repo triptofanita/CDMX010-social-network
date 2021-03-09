@@ -1,3 +1,5 @@
+import { auth } from './firebase.js';
+
 import { onNavigate } from './routes.js';
 
 // función para registrar usuario con email y contraseña
@@ -5,7 +7,7 @@ export const createNewUser = () => {
   const email = document.querySelector('#mailNewUser').value;
   const password = document.querySelector('#passwordNewUser').value;
   console.log(`${email + password}`);
-  firebase.auth().createUserWithEmailAndPassword(email, password)
+  auth.createUserWithEmailAndPassword(email, password)
     .then((user) => {
       console.log(user.user);
       if (user.user.emailVerified === true) {
@@ -30,7 +32,7 @@ export const loginUser = () => {
   const passwordUser = document.querySelector('#passwordUser').value;
   console.log(emailUser);
   console.log(passwordUser);
-  firebase.auth().signInWithEmailAndPassword(emailUser, passwordUser)
+  auth.signInWithEmailAndPassword(emailUser, passwordUser)
     .then((user) => {
       console.log(user.user);
       if (user.user.emailVerified) {
@@ -47,7 +49,7 @@ export const loginUser = () => {
 };
 // observador que nos diga sobre el email verificado o usuario logueado
 export const stateObserver = () => {
-  firebase.auth().onAuthStateChanged((user) => {
+  auth.onAuthStateChanged((user) => {
     if (user) {
       const email = user.email;
       const emailVerified = user.emailVerified;
@@ -67,20 +69,20 @@ export const stateObserver = () => {
 };
 // función para enviar correo de validación
 export const userValidation = () => {
-  const user = firebase.auth().currentUser;
+  const user = auth.currentUser;
   user.sendEmailVerification()
-    .then((res) => {
-      console.log(res);
+    .then((result) => {
+      console.log(result);
     })
-    .catch((er) => {
-      console.log(er);
+    .catch((error) => {
+      console.log(error);
     });
 };
 
 // autentificación con cuenta google
 export const googleSignIn = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithRedirect(provider)
+  auth.signInWithRedirect(provider)
     .then((result) => {
       if (result.credential) {
         const credential = result.credential;

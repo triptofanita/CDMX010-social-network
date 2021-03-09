@@ -11,6 +11,9 @@ export const emailVerification = `
     <p>¿ya tienes una cuenta verificada? mira aquí</p>
     <a class="goLogin" href="">Loguin</a>
   </div>
+  <div class= "verifiedImg">
+  <img class="verifiedImage" src="assets/img/growing-plant-svgrepo.svg"></img>
+</div>
 `;
 document.addEventListener('click', (e) => {
   if (e.target.matches('.emailVerified')) {
