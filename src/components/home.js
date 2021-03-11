@@ -8,13 +8,13 @@ export const home = `
     <div class= "containerImg">
     <img class="image" src="assets/img/imagendeportada.png"></img>
     </div>
+    <div class="session">
+      <button class="buttonLogin" id="login" href="#">Iniciar Sesión</button>
+      <button class="buttonSignUp" id="signUp" href="#">Regístrate</button>
+    </div>
     <div class = "aboutTextHome">
       <p> Eco App es una comunidad de usuarios interesados en compartir iniciativas y experiencias vinculadas a la ecología y al desarrollo sostenible.
       ¡Únete a esta comunidad y empieza a compartir tus ideas y tips para salvar al planeta!</p>
-    </div>
-    <div class="session">
-    <button class="buttonLogin" id="login" href="#">Iniciar Sesión</button>
-    <button class="buttonSignUp" id="signUp" href="#">Regístrate</button>
     </div>
     <div>
     <a class="moreInfo" href="#">Conócenos</a>

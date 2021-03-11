@@ -22,13 +22,30 @@ export const createPost = () => {
 };
 
 // función para leer la data
-export const getData = () => {
+/*export const getData = () => {
+  const renderData = document.querySelector('#oldPost');
   store.collection('post').get()
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data()}`);
+        renderData.innerHTML += `
+          <p>${doc.data().note}</p>
+        `
       });
     });
+};*/
+
+export const getData = () => {
+  const renderData = document.querySelector('#oldPost');
+  store.collection('post').onSnapshot((querySnapshot) => {
+    renderData.innerHTML='';
+    querySnapshot.forEach(doc => {
+      console.log(doc.data());
+      renderData.innerHTML += `
+          <p>${doc.data().note}</p> <br>
+        `
+    });
+  });
 };
 
 // auth.onAuthStateChanged((user) => {

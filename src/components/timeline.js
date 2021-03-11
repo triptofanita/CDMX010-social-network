@@ -1,6 +1,6 @@
 import { onNavigate } from '../lib/routes.js';
 
-import { createPost } from '../lib/dataFirebase.js';
+import { createPost, getData } from '../lib/dataFirebase.js';
 
 export const timeline = `
 <header>
@@ -15,10 +15,7 @@ export const timeline = `
     <button class="buttonNewPost" id="buttonNewPost"> Compartir </button>
   </div>
   <!-- <div class= "allPost"> -->
-  <div class="textOldPost">
-    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam..."</p>
+  <div class="textOldPost" id="oldPost">
   </div>
   <div class="oldPostMenu">
     <img class="likeImg" src="assets/img/growing-plant-svgrepo.svg"></img>
@@ -75,6 +72,7 @@ document.addEventListener('click', (e) => {
   if (e.target.matches('#buttonNewPost')) {
     e.preventDefault();
     createPost();
+    getData();
     // .then((post) => {
     // // una variable para el div donde se imprimirá
     //   const posting = document.querySelector('.textOldPost');
