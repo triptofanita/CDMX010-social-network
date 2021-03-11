@@ -14,15 +14,14 @@ export const timeline = `
     <textarea text="textArea" class="textPost" rows="5" cols="40" maxlength="200" placeholder="¿Qué te gustaría compartir?"></textarea>
     <button class="buttonNewPost" id="buttonNewPost"> Compartir </button>
   </div>
-  <!-- <div class= "allPost"> -->
-  <div class="textOldPost" id="oldPost">
+  <div class="containerPost" id="allPost">
   </div>
-  <div class="oldPostMenu">
+  <!-- <div class="oldPostMenu">
     <img class="likeImg" src="assets/img/growing-plant-svgrepo.svg"></img>
     <p>09</p>
     <a class="editText" id=""> Editar </button>
     <a class="deleteText" id=""> Eliminar</button>
-  </div>
+  </div> -->
 </main>
   <nav class="menuNavigate">
   <img class="menuImg" id="goTimeline" src="assets/img/home-page.svg"></img>

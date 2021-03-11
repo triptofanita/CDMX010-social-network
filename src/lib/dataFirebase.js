@@ -36,13 +36,24 @@ export const createPost = () => {
 };*/
 
 export const getData = () => {
-  const renderData = document.querySelector('#oldPost');
+  const renderData = document.querySelector('#allPost');
   store.collection('post').onSnapshot((querySnapshot) => {
+    console.log(querySnapshot)
     renderData.innerHTML='';
     querySnapshot.forEach(doc => {
       console.log(doc.data());
       renderData.innerHTML += `
-          <p>${doc.data().note}</p> <br>
+      <div class= "postCard">
+        <div class ="textContainer">
+          <p id=${doc.id}>${doc.data().note}</p>
+        </div>
+        <div class="oldPostMenu">
+          <img class="likeImg" src="assets/img/growing-plant-svgrepo.svg"></img>
+          <p>09</p>
+          <a class="editText" id=""> Editar </button>
+          <a class="deleteText" id=""> Eliminar</button>
+        </div>
+      </div>
         `
     });
   });

@@ -1,3 +1,5 @@
+/*Desktop*/
+
 /*Mobile*/
 *{
     background:#DFF0F2;
@@ -412,6 +414,7 @@ hr {
 
 .textOldPost{
   display: flex;
+  flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
   align-content: center;
