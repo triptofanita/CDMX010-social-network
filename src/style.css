@@ -1,38 +1,560 @@
+/*Desktop*/
+
+/*Mobile*/
 *{
-    background:linear-gradient(160deg, #7EA94C, #A2B36B);
+    background:#DFF0F2;
     background-attachment: fixed;
 }
 
 body{
-
-    /*background-repeat: no-repeat;*/
-    /* display: flex; */
     font-family: 'Oxygen', sans-serif;
+}
+
+header{
+    display: flex;
+    /* flex-flow: column wrap; */
+    justify-content: center;
+    align-items: center;
+    /* color:#0E4A21;
+    text-align: center;
+    font-size: 30px; */
+    width: 100%;
+    height: 100px;
+}
+h1{
+    font-family: 'Amatic SC';
+    font-size: 55px;
+    align-items: center;
+    text-align: center;
+    color: #3E8C59;
+}
+.containerImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .image{
-    display: flex;
-    flex-flow: column nowrap;
     justify-content: center;
-    align-items: center;
-    margin: top 200px;
+    align-items: flex-start;
     width: 25em;
-
 }
-
 .session{
-    display:flex;
-    justify-content:space-around;
+    display: flex;
+    justify-content:space-evenly;
     align-items: center;
-
+    height: 100px;
 }
-.buttonSession{
+.buttonSignUp,
+.buttonLogin,
+.sendNewUser{
     border: none;
+    background-color: #3E8C5A;
     color:white;
-    /* background-color: green; */
-    font-size: .7em;
+    font-size: 17px;
     letter-spacing: 2px;
     font-family: 'Oxygen', sans-serif;
+    text-align: center;
+    /* position: absolute; */
+    width: 150px;
+    height: 50px;
+    /* left: 40px;
+    top: 526px; */
+    border-radius: 25px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.moreInfo{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-decoration-line: underline;
+    flex-flow: column nowrap;
+    justify-content: center;
+    color: #5080C0;
+    padding: .5em;
+    font-family: 'Oxygen';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+}
+
+.aboutContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    margin: 100px, 15px, 100px, 15px;
+}
+
+.back {
+    display: flex;
+    font-family: 'Oxygen', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    background:none;
+    text-decoration:none;
+}
+
+hr {
+    width:100%;
+    border: 1px solid white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transform: rotate(0deg);
+}
+
+.aboutText{
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+
+.aboutTextHome {
+    display: none;
+}
+
+.aboutText p {
+    padding: .5em;
+    font-family: 'Oxygen', sans-serif;
+    text-align: justify ;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    background-color: white;
+    width: 70%;
+    height: 90%;
+}
+/*div contenedor de la imagen planta*/
+.aboutImgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 250px;
+}
+/*imagen about*/
+.aboutImage {
+    width: 5em;
+    background-color:white;
+    padding: 50px;
+}
+
+/*pantalla Sign Up
+/*titulos de registro*/
+.signUpText{
+    font-family: 'Oxygen', sans-serif;
+    font-size: 15px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.signUpText h2{
+    font-family: 'Oxygen', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 5px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.signUpText h3{
+    font-family: 'Oxygen', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 5px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+/* //Inputs */
+
+.dataNewUser{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.nameNewUser,
+.mailNewUser,
+.passwordNewUser{
+    background: #FFFFFF;
+    width: 280px;
+    height: 50px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    border:none;
+    border-radius: 6px;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 20px;
+    color: #8B8383;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    padding: .1rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+/* div botones Sign Up */
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
 
 }
 
+/* botones Sign Up */
+.buttonFacebook ,
+.buttonGoogle,
+.buttonSend,
+.buttonLogGoogle{
+    font-family: 'Oxygen', sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    width: 18rem;
+    height: 3.1rem;
+    margin: 10px;
+    text-align: center;
+    border: none;
+    background: #3E8C5A;
+    border-radius: 25px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: .5rem;
+    margin-top: .5rem;
+}
+/* Pantalla Log In*/
+
+/*Contenedor logIn*/
+.logContainer{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+}
+
+/*Input de correo y contraseña*/
+.mailUser,
+.passwordUser{
+    background: #FFFFFF;
+    width: 280px;
+    height: 50px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    border:none;
+    border-radius: 6px;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 20px;
+    color: #8B8383;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    padding: .1rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+/*Textos de inicio de sesión*/
+.logText h2{
+    font-family: 'Oxygen', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 5px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.logText h3{
+    font-family: 'Amatic SC';
+    font-size: 55px;
+    align-items: center;
+    text-align: center;
+    color: #3E8C59;
+}
+/* div botones Sign Up */
+.buttonLogContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+
+}
+/*Botón iniciar sesión*/
+.buttonLog{
+    font-family: 'Oxygen', sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    width: 18rem;
+    height: 3.1rem;
+    margin: 10px;
+    text-align: center;
+    border: none;
+    background: #3E8C5A;
+    border-radius: 25px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: .5rem;
+    margin-top: .5rem;
+}
+
+/*¿Olvidaste tu contraseña?*/
+.forgottenPass {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-decoration-line: underline;
+    flex-flow: column nowrap;
+    justify-content: center;
+    color: #5080C0;
+    padding: .5em;
+    font-family: 'Oxygen';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+}
+
+/*Diseño del timeline*/
+
+/* header */
+.headTimeline{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: 90%;
+  margin-left:5%;
+  margin-right:5%;
+}
+
+.iconApp{
+  width: 90px;
+  height: auto;
+}
+
+.iconUser{
+    width:60px;
+    height: auto;
+
+}
+/*Crear post*/
+.textAreaPost{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-flow: column wrap;
+  width: 90%;
+  height: 150px;
+  margin-left:5%;
+  margin-right:5%;
+  background: #79C1BD;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+}
+
+.textPost{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+
+}
+
+.buttonNewPost{
+  display:flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  justify-content: center;
+  width: 80px;
+  margin-top: 10px;
+  background: #E3F2F4;
+  border: none;
+  border-radius: 25px;
+}
+
+/*Menu de navegación*/
+.menuNavigate{
+    display:flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: fixed;
+    width:80%;
+    height:20%;
+    margin-left:10%;
+    margin-right:10%;
+    margin-top:120px;
+}
+
+.menuImg{
+    width: 32px;
+    padding: 32px;
+}
+
+/* old Post, timeline*/
+.oldPost{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-flow: column wrap;
+  width: 90%;
+  margin-top: 5%;
+  margin-left:5%;
+  margin-right:5%;
+}
+
+.textOldPost{
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background: #FFFFFF;
+}
+
+.textOldPost p{
+  background: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+/* div de menú de los post*/
+.oldPostMenu{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    background: #FFFFFF;
+    box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+}
+.likeImg, p, .editText, .deleteText{
+  background: #FFFFFF;
+}
+.likeImg{
+    width:20px;
+    height: auto;
+}
+/*Pantalla de verifiación por correo*/
+.verification{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 45px;
+}
+.verification p{
+  display:flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  align-content: center;
+  text-align: center;
+  width: 300px;
+  font-size: 20px;
+  margin-top: 10px;
+  background: #E3F2F4;
+}
+
+.emailVerified{
+  border: none;
+  background-color: #3E8C5A;
+  color:white;
+  font-size: 15px;
+  letter-spacing: 2px;
+  font-family: 'Oxygen', sans-serif;
+  text-align: center;
+  width: 160px;
+  height: 50px;
+  border-radius: 25px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+}
+.goLogin{
+  font-size: 20px;
+}
+.verifiedImg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.verifiedImage{
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 200px;
+  width: 10em;
+}
+textarea {
+  resize: none;
+}
+
+@media screen and (min-device-width: 800px) and (max-device-width: 1280px) {
+  .containerImg{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .image{
+      justify-content: center;
+      align-items: flex-start;
+      width: 25em;
+  }
+
+  .aboutTextHome{
+    display:block;
+  }
+
+  .aboutTextHome p {
+      padding: .5em;
+      font-family: 'Oxygen', sans-serif;
+      text-align: justify ;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 23px;
+      background-color:#DFF0F2;
+      width: 40%;
+      height: 90%;
+      margin-left: 30px;
+      margin-bottom: 50px;
+  }
+
+  .session{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+      width: 400px;
+  }
+
+  .buttonSignUp,
+  .buttonLogin{
+      border: none;
+      background-color: #3E8C5A;
+      color:white;
+      font-size: 17px;
+      letter-spacing: 2px;
+      font-family: 'Oxygen', sans-serif;
+      text-align: center;
+      /* position: absolute; */
+      width: 150px;
+      height: 50px;
+      /* left: 40px;
+      top: 526px; */
+      border-radius: 25px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .moreInfo{
+      display: none;
+  }
+}
