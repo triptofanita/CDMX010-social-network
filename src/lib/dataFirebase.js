@@ -1,21 +1,20 @@
-import { store } from './firebase.js';
+// import { store } from './firebase.js';
 
-export const savePost = () => {
-  const myPost = document.querySelector('.textPost').value;
-  store.collection('post').add({
-    note: myPost,
-    likes:
+// export const savePost = () => {
+//   const myPost = document.querySelector('.textPost').value;
+//   store.collection('post').add({
+//     note: myPost,
 
-  })
-    .then((docRef) => {
-      // para que limpie el campo del textarea al enviar
-      document.querySelector('.textPost').value = '';
-      console.log('ID del documento: ', docRef.id);
-    })
-    .catch((error) => {
-      console.error('no se creo documento: ', error);
-    });
-};
+//   })
+//     .then((docRef) => {
+//       // para que limpie el campo del textarea al enviar
+//       document.querySelector('.textPost').value = '';
+//       console.log('ID del documento: ', docRef.id);
+//     })
+//     .catch((error) => {
+//       console.error('no se creo documento: ', error);
+//     });
+// };
 
 // función para leer la data
 // export const getDataOne = () => {
@@ -40,16 +39,43 @@ export const savePost = () => {
 //     });
 // };
 
+// Dar like
+// export function likeCounter() {
+//   const db = firebase.firestore();
+//   const increment = firebase.firestore.FieldValue.increment(1);
+//   // const decrement = firebase.firestore.FieldValue.increment(-1);
+//   const statsRef = db.collection('post').doc('id');
+//   const batch = db.batch();
+//   batch.set(statsRef, { likeCount: increment }, { merge: true });
+//   batch.commit();
+// }
+
+// export const getLikes = (id) => {
+//   const renderLike = document.querySelector('.likeImg');
+//   store.collection('post').get(id)
+//     .then((querySnapshot) => {
+//       const db = firebase.firestore();
+//       const increment = firebase.firestore.FieldValue.increment(1);
+//       // const decrement = firebase.firestore.FieldValue.increment(-1);
+//       const statsRef = db.collection('post').doc('id');
+//       const batch = db.batch();
+//       batch.set(statsRef, { likeCount: increment }, { merge: true });
+//       batch.commit();
+//       querySnapshot.forEach((likeCount) => {
+//         renderLike.innerHTML += `.inputImg${likeCount.value}`;
+//       });
+//     });
+// };
 // Eliminar post
-export const deleteDataOne = (id) => {
-  store.collection('post').doc(id).delete()
-    .then(() => {
-      console.log('Post eliminado');
-    })
-    .catch((error) => {
-      console.error('error moving document: ', error);
-    });
-};
+// export const deleteDataOne = (id) => {
+//   store.collection('post').doc(id).delete()
+//     .then(() => {
+//       console.log('Post eliminado');
+//     })
+//     .catch((error) => {
+//       console.error('error moving document: ', error);
+//     });
+// };
 
 // eslint-disable-next-line spaced-comment
 /*export const deletePost = (id) => {
@@ -111,5 +137,4 @@ export const deleteDataOne = (id) => {
 //     demoPost.innerHTML = `<p>accede para ver publicaciones</p>
 //     `;
 //   }
-// };
 // };

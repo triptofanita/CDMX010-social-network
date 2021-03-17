@@ -86,9 +86,6 @@ export const googleSignIn = () => {
     .then((result) => {
       if (result.credential) {
         const credential = result.credential;
-        // // This gives you a Google Access Token. You can use it to access the Google API.
-        // const token = credential.accessToken;
-        // // ...
         console.log(`estas dentro, ${credential}`);
       }
       // The signed-in user info.
