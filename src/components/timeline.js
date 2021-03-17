@@ -1,6 +1,6 @@
 import { onNavigate } from '../lib/routes.js';
 import { store } from '../lib/firebase.js';
-import { savePost, deleteDataOne } from '../lib/dataFirebase.js';
+// import { getLikes } from '../lib/dataFirebase.js';
 
 export const timeline = `
 <header>
@@ -11,7 +11,7 @@ export const timeline = `
 </header>
 <main>
   <div class= "textAreaPost">
-    <textarea text="textArea" class="textPost" rows="5" cols="40" maxlength="200" placeholder="¿Qué te gustaría compartir?"></textarea>
+    <textarea text="textArea" class="textPost" id="textPost" rows="5" cols="40" maxlength="200" placeholder="¿Qué te gustaría compartir?"></textarea>
     <button class="buttonNewPost" id="buttonNewPost"> Compartir </button>
   </div>
 
@@ -25,12 +25,31 @@ export const timeline = `
   <img class="menuImg" id="close" src="assets/img/on-off-button.svg"></img>
   </nav>`;
 
+// Esta es la función que guarda la data en Firestore
+export const savePost = (note, like) => {
+  const myPost = document.querySelector('#textPost').value;
+  store.collection('post').add({
+    note: myPost,
+    // like,
+  })
+    .then((docRef) => {
+      // para que limpie el campo del textarea al enviar
+      document.querySelector('.textPost').value = '';
+      console.log('ID del documento: ', docRef.id);
+    })
+    .catch((error) => {
+      console.error('no se creo documento: ', error);
+    });
+};
+
 // Esta es la función que crea el post
 export const getDataOne = () => {
   const renderData = document.querySelector('#allPost');
   store.collection('post').get()
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
+      // const publication = doc.data();
+        // const numLikes = publication.like;
         console.log(`${doc.id} => ${doc.data()}`);
         renderData.innerHTML += `
         <div class= "postCard">
@@ -38,34 +57,60 @@ export const getDataOne = () => {
             <p id=${doc.id}>${doc.data().note}</p>
           </div>
           <div class="oldPostMenu">
-            <img class="likeImg" src="assets/img/growing-plant-svgrepo.svg"></img>
-            <p>09</p>
-            <a class="editText" id=""> Editar </button>
-            <button class="deleteText" id=${doc.id}> Eliminar</button>
+            <button class="likeImg" id="likeImage" src="assets/img/growing-plant-svgrepo.svg" ></button>
+            <p class="numLike"> </p>
+              <button class="editText" id=""> Editar </button>
+            <button class="deleteText" data-id='${doc.id}' id='${doc.id}'> Eliminar</button>
           </div>
         </div>`;
       });
     });
 };
-// función para eliminar post
 
-const botonDelete = document.querySelector('.deleteText');
-botonDelete.addEventListener('click, borrar');
-function borrar() {
-borrar.deleteDataOne(doc.id);
+export function timelineView(container) {
+  // eslint-disable-next-line no-param-reassign
+  container.innerHTML = timeline;
+  getDataOne();
 }
 
+// const updatePostOne = (id) => {
+//   store.collection('post').doc(id).update({
+//     note: myPost,
+//   }).then(() => {
+//     console.log('se actualizó documento');
+//   })
+//     .catch((error) => {
+//       console.log(error);
+//     });
+// };
 
+// // función para eliminar post
+// const eliminarPost = document.querySelector('.deleteText');
+// eliminarPost.addEventListener('click'());
+const deleteDataOne = (postId) => {
+  store.collection('post').doc(postId).delete()
+    .then(() => {
+      console.log('post eliminado: ', postId);
+    })
+    .catch((error) => {
+      console.error('error moving document: ', error);
+    });
+};
 
 document.addEventListener('click', (e) => {
+  // guardar post
   if (e.target.matches('#buttonNewPost')) {
     e.preventDefault();
     savePost();
     getDataOne();
   }
+  // borrar post
   if (e.target.matches('.deleteText')) {
-    deleteDataOne();
+    const postId = e.target.dataset.id;
+    deleteDataOne(postId);
+    // deleteDataOne();
   }
+  // dar like en post
   if (e.target.matches('#close')) {
     firebase
       .auth()
@@ -91,3 +136,33 @@ document.addEventListener('click', (e) => {
     onNavigate('/timeline');
   }
 });
+
+// Usuario actual y función likes
+export function activeUser() {
+  return firebase.auth().currentUser;
+}
+
+// const getPost = (id) => store.collection('post').doc(id).get();
+
+// const btnLike = document.querySelector('.likeImg');
+// const user = activeUser();
+// btnLike.forEach((button) => {
+//   button.addEventListener('click', async (e) => {
+//     const id = e.target.dataset.id;
+//     const docGetPost = await getPost(id);
+//     const postDocGetPost = docGetPost.data();
+//     if (postDocGetPost.like.includes(user.email)) {
+//       const filteredEmail = postDocGetPost.like.filter((email) => email !== user.email);
+//       const updates = { like: filteredEmail };
+//       updatePostOne(id, updates);
+//     } else {
+//       postDocGetPost.like.push(user.email);
+//       const updates = { like: postDocGetPost.like };
+//       updatePostOne(id, updates);
+//       const renderData = document.querySelector('#allPost');
+//       renderData['.likeImg'].textContent = `
+//     <button class="likeImg" id="likeImage" src="assets/img/growing-plant-svgrepo.svg"></button>`;
+//     }
+//   });
+// });
+/*  */
