@@ -347,16 +347,18 @@ hr {
     height: auto;
 
 }
+
 /*Crear post*/
 .textAreaPost{
   display: flex;
   justify-content: center;
   align-content: center;
   flex-flow: column wrap;
-  width: 90%;
+  width: 355px;
   height: 150px;
   margin-left:5%;
   margin-right:5%;
+  margin-bottom: 30%;
   background: #79C1BD;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
   border-radius: 6px;
@@ -364,17 +366,18 @@ hr {
 
 .textPost{
   display: flex;
+  flex-flow: column wrap;
   justify-content: center;
   align-items: center;
   border: none;
-
+  width:80%;
 }
 
 .buttonNewPost{
   display:flex;
   flex-flow: row wrap;
   justify-content: flex-end;
-  justify-content: center;
+  align-items: center;
   width: 80px;
   margin-top: 10px;
   background: #E3F2F4;
@@ -386,47 +389,57 @@ hr {
 .menuNavigate{
     display:flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: space-between;
     position: fixed;
-    width:80%;
-    height:20%;
-    margin-left:10%;
+    bottom: 0;
+    width: 100vw;
+    height: 10%;
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+    /* margin-left:10%;
     margin-right:10%;
-    margin-top:120px;
+    margin-top:120px; */
 }
 
 .menuImg{
-    width: 32px;
-    padding: 32px;
+    width: 30px;
+    padding: 20px;
+    margin: 0;
+    background-color: #FFFFFF;
 }
 
 /* old Post, timeline*/
-.oldPost{
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-flow: column wrap;
-  width: 90%;
-  margin-top: 5%;
+.containerPost{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column ;
+    width: 300px;
+    height: 100px;
+    margin-left: 5%;
+    margin-top: 60px;
+}
+.postCard{
+    display: flex;
+    flex-direction: column ;
+    justify-content: center;
+    align-content: center;
+    margin-top: 30px;
+}
+.textContainer{
+    display: flex;
+    flex-direction: column-reverse ;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background: #FFFFFF;
+
+    width: 350px;
+    height: 100px;
 }
 
-.textOldPost{
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  background: #FFFFFF;
-}
-
-.textOldPost p{
-  background: #FFFFFF;
-  display: flex;
-  justify-content: center;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-/* div de menú de los post*/
 .oldPostMenu{
     display: flex;
     justify-content: space-around;
@@ -435,13 +448,27 @@ hr {
     background: #FFFFFF;
     box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.1);
     border-radius: 6px;
+    width: 350px;
+    margin-bottom: 20px;
 }
-.likeImg, p, .editText, .deleteText{
+.editText, .deleteText{
   background: #FFFFFF;
 }
 .likeImg{
     width:20px;
-    height: auto;
+    height: 30px;
+    /* height: auto; */
+}
+
+.editText, .deleteText{
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    width: 80px;
+    margin-top: 10px;
+    background: #E3F2F4;
+    border: none;
+    border-radius: 25px;
 }
 /*Pantalla de verifiación por correo*/
 .verification{

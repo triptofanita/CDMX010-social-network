@@ -11,7 +11,7 @@ export const timeline = `
 </header>
 <main>
   <div class= "textAreaPost">
-    <textarea text="textArea" class="textPost" rows="5" cols="40" maxlength="200" placeholder="¿Qué te gustaría compartir?"></textarea>
+    <textarea text="textArea" class="textPost" id="textPost" rows="5" cols="40" maxlength="200" placeholder="¿Qué te gustaría compartir?"></textarea>
     <button class="buttonNewPost" id="buttonNewPost"> Compartir </button>
   </div>
 
@@ -30,6 +30,7 @@ export const savePost = (note, like) => {
   const myPost = document.querySelector('#textPost').value;
   store.collection('post').add({
     note: myPost,
+    // like,
   })
     .then((docRef) => {
       // para que limpie el campo del textarea al enviar
@@ -58,7 +59,7 @@ export const getDataOne = () => {
           <div class="oldPostMenu">
             <button class="likeImg" id="likeImage" src="assets/img/growing-plant-svgrepo.svg" ></button>
             <p class="numLike"> </p>
-              <a class="editText" id=""> Editar </button>
+              <button class="editText" id=""> Editar </button>
             <button class="deleteText" data-id='${doc.id}' id='${doc.id}'> Eliminar</button>
           </div>
         </div>`;
@@ -72,24 +73,24 @@ export function timelineView(container) {
   getDataOne();
 }
 
-const updatePostOne = (id) => {
-  store.collection('post').doc(id).update({
-    note: myPost,
-  }).then(() => {
-    console.log('se actualizó documento');
-  })
-    .catch((error) => {
-      console.log(error);
-    });
-};
+// const updatePostOne = (id) => {
+//   store.collection('post').doc(id).update({
+//     note: myPost,
+//   }).then(() => {
+//     console.log('se actualizó documento');
+//   })
+//     .catch((error) => {
+//       console.log(error);
+//     });
+// };
 
 // // función para eliminar post
 // const eliminarPost = document.querySelector('.deleteText');
 // eliminarPost.addEventListener('click'());
-export const deleteDataOne = (id) => {
-  store.collection('post').doc(id).delete()
+const deleteDataOne = (postId) => {
+  store.collection('post').doc(postId).delete()
     .then(() => {
-      console.log('Post eliminado');
+      console.log('post eliminado: ', postId);
     })
     .catch((error) => {
       console.error('error moving document: ', error);
@@ -105,8 +106,8 @@ document.addEventListener('click', (e) => {
   }
   // borrar post
   if (e.target.matches('.deleteText')) {
-    e.preventDefault();
-    deleteDataOne();
+    const postId = e.target.dataset.id;
+    deleteDataOne(postId);
     // deleteDataOne();
   }
   // dar like en post
@@ -164,3 +165,4 @@ export function activeUser() {
 //     }
 //   });
 // });
+/*  */
