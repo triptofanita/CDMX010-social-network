@@ -1,5 +1,3 @@
-/*Desktop*/
-
 /*Mobile*/
 *{
     background:#DFF0F2;
@@ -28,6 +26,11 @@ h1{
     text-align: center;
     color: #3E8C59;
 }
+
+.desktopHome{
+  display:none;
+}
+
 .containerImg{
     display: flex;
     justify-content: center;
@@ -451,15 +454,18 @@ hr {
     width: 350px;
     margin-bottom: 20px;
 }
-.editText, .deleteText{
-  background: #FFFFFF;
+.likeImg, .editText, .deleteText, p{
+    background-color: #FFFFFF;
 }
 .likeImg{
     width:20px;
     height: 30px;
     /* height: auto; */
 }
-
+.likeImg:hover{
+    transform: scale(1.03);
+    background: #3E8C5A;
+}
 .editText, .deleteText{
     display:flex;
     flex-flow: row nowrap;
@@ -519,20 +525,45 @@ hr {
 textarea {
   resize: none;
 }
+/* desktopHome */
+@media screen and (min-device-width: 800px) and (max-device-width: 1400px) {
 
-@media screen and (min-device-width: 800px) and (max-device-width: 1280px) {
+  .mobileHome{
+    display:none;
+  }
+  .desktopHome{
+    display:block;
+  }
+  .containerOne{
+    display:inline-flex;
+    flex-direction: row;
+    justify-content: center;
+
+  }
+  .cotainerTwo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
   .containerImg{
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    display:inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
   }
 
-  .image{
-      justify-content: center;
+ .image {
+      /* justify-content: center;
       align-items: flex-start;
-      width: 25em;
+      width: 25em; */
   }
-
+  .imageDesktop{
+    display:flex;
+flex-flow: row nowrap;
+    justify-content: flex-end;
+    width:28em;
+    height:20em;
+  }
   .aboutTextHome{
     display:block;
   }
@@ -552,14 +583,18 @@ textarea {
       margin-bottom: 50px;
   }
 
-  .session{
+  /*.session{
+    display:inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100px;
       width: 400px;
-  }
+  }*/
 
   .buttonSignUp,
   .buttonLogin{
@@ -579,7 +614,7 @@ textarea {
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
   }
 
-  .moreInfo{
+/*  .moreInfo{
       display: none;
-  }
+  }*/
 }

@@ -20,13 +20,11 @@ export const timeline = `
 </main>
   <nav class="menuNavigate">
   <img class="menuImg" id="goTimeline" src="assets/img/home-page.svg"></img>
-  <img class="menuImg" id="goGroups" src="assets/img/social-group.svg"></img>
-  <img class="menuImg" id="goProfile" src="assets/img/gear.svg"></img>
   <img class="menuImg" id="close" src="assets/img/on-off-button.svg"></img>
   </nav>`;
 
 // Esta es la función que guarda la data en Firestore
-export const savePost = (note, like) => {
+export const savePost = (note) => {
   const myPost = document.querySelector('#textPost').value;
   store.collection('post').add({
     note: myPost,
@@ -48,8 +46,6 @@ export const getDataOne = () => {
   store.collection('post').get()
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
-      // const publication = doc.data();
-        // const numLikes = publication.like;
         console.log(`${doc.id} => ${doc.data()}`);
         renderData.innerHTML += `
         <div class= "postCard">
@@ -57,10 +53,10 @@ export const getDataOne = () => {
             <p id=${doc.id}>${doc.data().note}</p>
           </div>
           <div class="oldPostMenu">
-            <button class="likeImg" id="likeImage" src="assets/img/growing-plant-svgrepo.svg" ></button>
+            <img class="likeImg" id="likeImage" src="assets/img/growing-plant-svgrepo.svg"></>
             <p class="numLike"> </p>
               <button class="editText" id=""> Editar </button>
-            <button class="deleteText" data-id='${doc.id}' id='${doc.id}'> Eliminar</button>
+            <button class="deleteText" data-id='${doc.id}' id=''> Eliminar</button>
           </div>
         </div>`;
       });
@@ -97,11 +93,17 @@ const deleteDataOne = (postId) => {
     });
 };
 
+function refresh() {
+  // eslint-disable-next-line no-restricted-globals
+  location.reload();
+}
+
 document.addEventListener('click', (e) => {
   // guardar post
   if (e.target.matches('#buttonNewPost')) {
     e.preventDefault();
     savePost();
+    refresh();
     getDataOne();
   }
   // borrar post
@@ -123,14 +125,6 @@ document.addEventListener('click', (e) => {
         alert(`An error happened , ${error}`);
       });
   } // si manda a la pantalla perfil
-  if (e.target.matches('#goProfile')) {
-    console.log('Dirige al perfil');
-    onNavigate('/profile');
-  }
-  if (e.target.matches('#goGroups')) {
-    console.log('Dirige al timeline');
-    onNavigate('/groups');
-  }
   if (e.target.matches('#goTimeline')) {
     console.log('Dirige al timeline');
     onNavigate('/timeline');
@@ -138,9 +132,9 @@ document.addEventListener('click', (e) => {
 });
 
 // Usuario actual y función likes
-export function activeUser() {
-  return firebase.auth().currentUser;
-}
+// export function activeUser() {
+//   return firebase.auth().currentUser;
+// }
 
 // const getPost = (id) => store.collection('post').doc(id).get();
 

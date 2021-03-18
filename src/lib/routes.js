@@ -3,8 +3,6 @@ import { about } from '../components/about.js';
 import { signUp } from '../components/signup.js';
 import { login } from '../components/login.js';
 import { timelineView } from '../components/timeline.js';
-import { profile } from '../components/profile.js';
-import { groups } from '../components/groups.js';
 import { emailVerification } from '../components/emailVerification.js';
 
 export const routes = {
@@ -14,8 +12,6 @@ export const routes = {
   '/login': login,
   '/emailVerification': emailVerification,
   '/timeline': timelineView,
-  '/profile': profile,
-  '/groups': groups,
 };
 
 export const rootDiv = document.getElementById('root');
