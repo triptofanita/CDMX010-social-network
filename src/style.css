@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Oxygen:wght@300;400;700&display=swap');
+
+::-webkit-input-placeholder{
+  color: #8B8383;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+}
+
 /*Mobile*/
 *{
     background:#DFF0F2;
@@ -100,7 +111,7 @@ h1{
     background:none;
     text-decoration:none;
 }
-
+/* es la barrita de separación */
 hr {
     width:100%;
     border: 1px solid white;
@@ -350,18 +361,38 @@ hr {
     height: auto;
 
 }
+/* .postSection{
+  justify-content: center;
+  flex-direction:  column;
+
+} */
 
 /*Crear post*/
-.textAreaPost{
+#section{
+  justify-content: center;
+  flex-direction:  column;
+  overflow-y: scroll;
+}
+.divTextArea{
   display: flex;
   justify-content: center;
   align-content: center;
-  flex-flow: column wrap;
+  align-items: center;
+  flex-flow: column nowrap;
   width: 355px;
   height: 150px;
+  margin-top: 35px;
+}
+.textAreaPostBlue{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-flow: column nowrap;
+  width: 355px;
+  height: 140px;
   margin-left:5%;
   margin-right:5%;
-  margin-bottom: 30%;
+  margin-bottom: 20%;
   background: #79C1BD;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
   border-radius: 6px;
@@ -369,11 +400,14 @@ hr {
 
 .textPost{
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   border: none;
-  width:80%;
+  width:100%;
+  height: 100px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
 }
 
 .buttonNewPost{
@@ -388,30 +422,6 @@ hr {
   border-radius: 25px;
 }
 
-/*Menu de navegación*/
-.menuNavigate{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
-    height: 10%;
-    margin: 0;
-    padding: 0;
-    background-color: #FFFFFF;
-    /* margin-left:10%;
-    margin-right:10%;
-    margin-top:120px; */
-}
-
-.menuImg{
-    width: 30px;
-    padding: 20px;
-    margin: 0;
-    background-color: #FFFFFF;
-}
 
 /* old Post, timeline*/
 .containerPost{
@@ -422,7 +432,7 @@ hr {
     width: 300px;
     height: 100px;
     margin-left: 5%;
-    margin-top: 60px;
+    margin-top: 320px;
 }
 .postCard{
     display: flex;
@@ -438,7 +448,7 @@ hr {
     align-items: center;
     align-content: center;
     background: #FFFFFF;
-
+    overflow: scroll;
     width: 350px;
     height: 100px;
 }
@@ -476,6 +486,30 @@ hr {
     border: none;
     border-radius: 25px;
 }
+/*Menu de navegación*/
+.menuNavigate{
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 10%;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  /* margin-left:10%;
+  margin-right:10%;
+  margin-top:120px; */
+}
+
+.menuImg{
+  width: 30px;
+  padding: 20px;
+  margin: 0;
+  background-color: #FFFFFF;
+}
+
 /*Pantalla de verifiación por correo*/
 .verification{
   display:flex;
@@ -527,30 +561,30 @@ textarea {
 }
 /* desktopHome */
 @media screen and (min-device-width: 800px) and (max-device-width: 1400px) {
-    /* PANTALLA HOME*/
-      .mobileHome{
-        display:none;
-      }
-      .desktopHome{
-        display:block;
-      }
-      header{
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: flex-start;
-        width: 100%;
-        height: 80px;
-        margin-top: 60px;
+/* PANTALLA HOME*/
+.mobileHome{
+  display:none;
+}
+.desktopHome{
+  display:block;
+}
 
-      }
-    h1 {
-      display: flex;
-      align-items: center;
+header{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  width: 100%;
+  height: 80px;
+  margin-top: 60px;
+}
 
-      margin-right: 20%;
-
+h1 {
+  display: flex;
+  align-items: center;
+  margin-right: 20%;
     }
-    /* imagen y botones */
+
+    /* imagen 1 y botones*/
     .containerOne{
       display: flex;
       flex-direction: row;
@@ -587,7 +621,6 @@ textarea {
       text-align: center;
       width: 150px;
       height: 50px;
-
     }
 
     /* texto about me e imagen desktop */
@@ -619,4 +652,186 @@ textarea {
         background-color:#DFF0F2;
         margin-left: 30px;
     }
+
+/*Diseño del timeline*/
+
+/* header */
+.headTimeline{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: 90%;
+  margin-left:5%;
+  margin-right:5%;
+}
+
+.iconApp{
+  width: 90px;
+  height: auto;
+}
+
+.iconUser{
+    width:60px;
+    height: auto;
+
+}
+#section{
+  justify-content: center;
+  flex-direction:  column;
+  overflow-y: scroll;
+}
+.divTextArea{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  width: 90%;
+  height: 130px;
+  margin-top: 170px;
+}
+.textAreaPostBlue{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-flow: column nowrap;
+  width: 90%;
+  height: 140px;
+  margin-left:5%;
+  margin-right:5%;
+  margin-bottom: 20%;
+  background: #79C1BD;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+}
+
+/*Crear post*/
+.textAreaPost{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-flow: column wrap;
+  width: 355px;
+  height: 100px;
+  margin-left:5%;
+  margin-right:5%;
+  /* margin-bottom: 30%; */
+  background: #79C1BD;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+}
+
+.textPost{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  width:80%;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+
+}
+
+.buttonNewPost{
+  display:flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  align-items: center;
+  width: 80px;
+  margin-top: 10px;
+  background: #E3F2F4;
+  border: none;
+  border-radius: 25px;
+}
+
+/* old Post, timeline*/
+.containerPost{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column ;
+    width: 300px;
+    height: 100px;
+    margin-left: 5%;
+    margin-top: 320px;
+}
+.postCard{
+    display: flex;
+    flex-direction: column ;
+    justify-content: center;
+    align-content: center;
+    margin-top: 30px;
+}
+.textContainer{
+    display: flex;
+    flex-direction: column-reverse ;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background: #FFFFFF;
+    overflow: scroll;
+    width: 350px;
+    height: 100px;
+}
+
+.oldPostMenu{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    background: #FFFFFF;
+    box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    width: 350px;
+    margin-bottom: 20px;
+}
+.likeImg, .editText, .deleteText, p{
+    background-color: #FFFFFF;
+}
+.likeImg{
+    width:20px;
+    height: 30px;
+    /* height: auto; */
+}
+.likeImg:hover{
+    transform: scale(1.03);
+    background: #3E8C5A;
+}
+.editText, .deleteText{
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    width: 80px;
+    margin-top: 10px;
+    background: #E3F2F4;
+    border: none;
+    border-radius: 25px;
+}
+/*Menu de navegación*/
+.menuNavigate{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 10%;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  /* margin-left:10%;
+  margin-right:10%;
+  margin-top:120px; */
+}
+
+.menuImg{
+  width: 30px;
+  padding: 20px;
+  margin: 0;
+  background-color: #FFFFFF;
+}
 }
