@@ -23,7 +23,7 @@ export const home = `
       <h1>ECO APP</h1>
     </header>
       <!--- <div class= "inicio"> -->
-        <div class="containerOne>
+        <div class="containerOne">
             <div class= "containerImg">
               <img class="image" src="assets/img/imagendeportada.png"></img>
             </div>
@@ -32,7 +32,7 @@ export const home = `
               <button class="buttonSignUp" id="signUp" href="#">Regístrate</button>
             </div>
         </div>
-        <div class= containerTwo>
+        <div class="containerTwo">
           <div class= "aboutTextHome">
             <p> Eco App es una comunidad de usuarios interesados en compartir iniciativas y experiencias vinculadas a la ecología y al desarrollo sostenible.
               ¡Únete a esta comunidad y empieza a compartir tus ideas y tips para salvar al planeta!</p>

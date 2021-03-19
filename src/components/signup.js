@@ -1,24 +1,54 @@
 import { createNewUser } from '../lib/authFirebase.js';
 
 export const signUp = `
-<div class ="signUp">
-        <div class ="signUpText">
-          <h2>¡Regístrate!</h2>
-          <h3>Es rápido y fácil</h3>
-        </div>
-        <div class="dataNewUser">
-          <input type="text" id="nameNewUser" class="nameNewUser" placeholder="Nombre"> </input>
-          <input type="text" id="mailNewUser" class="mailNewUser" placeholder="Correo"> </input>
-          <input type="password" id="passwordNewUser" class="passwordNewUser" placeholder="Contraseña"></input>
-          <div class ="errorAlert">
-          </div>
-          <button class="buttonSend" id="signUpSend">enviar</button>
-          </div>
-        <div class="buttonContainer">
-          <!-- <button class="buttonFacebook" id="signUpFacebook">Continuar con Facebook</button> -->
-          <button class="buttonGoogle" id="signUpGoogle">Continuar con Google</button>
-        </div>
+<div class="mobileSignup">
+  <div class ="signUp">
+    <div class ="signUpText">
+      <h2>¡Regístrate!</h2>
+      <h3>Es rápido y fácil</h3>
+    </div>
+    <div class="dataNewUser">
+      <input type="text" id="nameNewUser" class="nameNewUser" placeholder="Nombre"> </input>
+      <input type="text" id="mailNewUser" class="mailNewUser" placeholder="Correo"> </input>
+      <input type="password" id="passwordNewUser" class="passwordNewUser" placeholder="Contraseña"></input>
+      <div class ="errorAlert">
+    </div>
+      <button class="buttonSend" id="signUpSend">enviar</button>
+    </div>
+    <div class="buttonContainer">
+        <button class="buttonGoogle" id="signUpGoogle">Continuar con Google</button>
+    </div>
+  </div>
+</div>
+<div class="desktopSignup">
+  <div class ="signUp">
+    <div class="containerRight">
+      <div class="signUpText">
+        <h2>¡Regístrate!</h2>
+        <h3>Es rápido y fácil</h3>
       </div>
+      <div class="dataNewUser">
+        <input type="text" id="nameNewUser" class="nameNewUser" placeholder="Nombre"> </input>
+        <input type="text" id="mailNewUser" class="mailNewUser" placeholder="Correo"> </input>
+        <input type="password" id="passwordNewUser" class="passwordNewUser" placeholder="Contraseña"></input>
+        <div class ="errorAlert">
+        </div>
+        <button class="buttonSend" id="signUpSend">enviar</button>
+      </div>
+      <div class="buttonContainer">
+        <button class="buttonGoogle" id="signUpGoogle">Continuar con Google</button>
+      </div>
+    </div>
+    <div="containerLeft">
+      <div class= "aboutTextSignup">
+        <p> Eco App es una comunidad de usuarios interesados en compartir iniciativas y experiencias vinculadas a la ecología y al desarrollo sostenible.
+          ¡Únete a esta comunidad y empieza a compartir tus ideas y tips para salvar al planeta!</p>
+      </div>
+      <div class="containerSignup">
+      <img class="imageSignup" src="assets/img/imagendeportada.png"></img>
+    </div>
+  </div>
+</div>
       `;
 
 document.addEventListener('click', (e) => {

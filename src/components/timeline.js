@@ -28,7 +28,6 @@ export const savePost = (note) => {
   const myPost = document.querySelector('#textPost').value;
   store.collection('post').add({
     note: myPost,
-    // like,
   })
     .then((docRef) => {
       // para que limpie el campo del textarea al enviar
@@ -93,17 +92,11 @@ const deleteDataOne = (postId) => {
     });
 };
 
-function refresh() {
-  // eslint-disable-next-line no-restricted-globals
-  location.reload();
-}
-
 document.addEventListener('click', (e) => {
   // guardar post
   if (e.target.matches('#buttonNewPost')) {
     e.preventDefault();
     savePost();
-    refresh();
     getDataOne();
   }
   // borrar post
