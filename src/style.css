@@ -41,7 +41,9 @@ h1{
 .desktopHome{
   display:none;
 }
-
+.desktopLogin, .desktopSignup{
+  display:none;
+}
 .containerImg{
     display: flex;
     justify-content: center;
@@ -276,7 +278,7 @@ hr {
     align-content: center;
 }
 /*Textos de inicio de sesión*/
-.logText h2{
+.logText p{
     font-family: 'Oxygen', sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -285,6 +287,7 @@ hr {
     display: flex;
     align-items: center;
     text-align: center;
+    background:#DFF0F2;
 }
 
 .logText h3{
@@ -373,56 +376,51 @@ hr {
   flex-direction:  column;
   overflow-y: scroll;
 }
+textarea {
+  resize: none;
+}
 .divTextArea{
   display: flex;
   justify-content: center;
-  align-content: center;
   align-items: center;
-  flex-flow: column nowrap;
-  width: 355px;
-  height: 150px;
-  margin-top: 35px;
+  height: 200px;
+  /* background-color: black; */
 }
 .textAreaPostBlue{
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   flex-flow: column nowrap;
   width: 355px;
-  height: 140px;
-  margin-left:5%;
-  margin-right:5%;
-  margin-bottom: 20%;
+  height: 150px;
   background: #79C1BD;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
   border-radius: 6px;
 }
 
 .textPost{
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
   border: none;
-  width:100%;
-  height: 100px;
+  width:280px;
+  height: 91px;
   background-color: #FFFFFF;
   border-radius: 6px;
 }
 
 .buttonNewPost{
-  display:flex;
-  flex-flow: row wrap;
-  justify-content: flex-end;
-  align-items: center;
+  align-self: flex-end;
   width: 80px;
+  height: 25px;
   margin-top: 10px;
-  background: #E3F2F4;
-  border: none;
+  margin-right: 10%;
   border-radius: 25px;
+  border: none;
+  background: #E3F2F4;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 12px;
+  color: #8B8383;
+  text-align: center;
+
 }
-
-
 /* old Post, timeline*/
 .containerPost{
     display: flex;
@@ -478,13 +476,16 @@ hr {
 }
 .editText, .deleteText{
     display:flex;
-    flex-flow: row nowrap;
     justify-content: center;
+    justify-content: space-evenly;
     width: 80px;
-    margin-top: 10px;
-    background: #E3F2F4;
+    height: 25px;
     border: none;
-    border-radius: 25px;
+  align-self: flex-end;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 15px;
+  color: #8B8383;
+  text-align: center;
 }
 /*Menu de navegación*/
 .menuNavigate{
@@ -556,102 +557,256 @@ hr {
   margin-top: 200px;
   width: 10em;
 }
-textarea {
-  resize: none;
-}
+
 /* desktopHome */
+/* DESKTOPHOME */
 @media screen and (min-device-width: 800px) and (max-device-width: 1400px) {
-/* PANTALLA HOME*/
-.mobileHome{
-  display:none;
-}
-.desktopHome{
-  display:block;
-}
+  /* PANTALLA HOME*/
+  .mobileHome{
+    display:none;
+  }
+  .desktopHome{
+    display:block;
+  }
 
-header{
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-start;
-  width: 100%;
-  height: 80px;
-  margin-top: 60px;
-}
+  .ecoApp {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    width: 100%;
+    height: 80px;
 
-h1 {
-  display: flex;
-  align-items: center;
-  margin-right: 20%;
-    }
+   }
 
-    /* imagen 1 y botones*/
-    .containerOne{
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
+  .ecoApp p {
+    display: flex;
+    font-weight: 700;
+    font-family: 'Amatic SC';
+    font-size: 55px;
+    margin-right: 5em;
+    padding-top: 2em;
+    align-items: center;
+    text-align: center;
+    color: #3E8C59;
+    background-color:#DFF0F2;
+    margin-bottom: 35px;
+      }
+      /* imagen 1 y botones*/
+      .containerOne{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
 
-    .image{
-      width: 27em;
-      margin-right: 10em;
-      margin-left: 10em;
-     /* display:flex;
-     justify-content: center; */
-    }
-    .session{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+      .image{
+        width: 27em;
+        margin-right: 10em;
+        margin-left: 10em;
+       /* display:flex;
+       justify-content: center; */
+      }
+      .session{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
 
-    .buttonSignUp,
-    .buttonLogin{
-      margin-top: 10px;
-      display: flex;
-      align-items: center;
-      margin-left: 13em;
-      justify-content: center;
-      border: none;
-      background-color: #3E8C5A;
-      color:white;
-      font-size: 17px;
-      letter-spacing: 2px;
-      font-family: 'Oxygen', sans-serif;
-      text-align: center;
-      width: 150px;
-      height: 50px;
-    }
-
-    /* texto about me e imagen desktop */
-    .containerTwo{
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-
-    }
-    .imageDesktop{
-      width: 27em;
-      margin-right: 7em;
-      margin-left: 13em;
-
-    }
-
-    .aboutTextHome{
-      display:block;
-
-    }
-    .aboutTextHome p {
-        padding: .5em;
+      .buttonSignUp,
+      .buttonLogin{
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        margin-left: 13em;
+        justify-content: center;
+        border: none;
+        background-color: #3E8C5A;
+        color:white;
+        font-size: 17px;
+        letter-spacing: 2px;
         font-family: 'Oxygen', sans-serif;
-        text-align: justify ;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 18px;
-        line-height: 23px;
-        background-color:#DFF0F2;
-        margin-left: 30px;
-    }
+        text-align: center;
+        width: 150px;
+        height: 50px;
+      }
+
+      /* texto about me e imagen desktop */
+      .containerTwo{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+      }
+      .imageDesktop{
+        width: 27em;
+        margin-right: 7em;
+        margin-left: 13em;
+
+      }
+
+      .aboutTextHome{
+        display:block;
+
+      }
+      .aboutTextHome p {
+          padding: .5em;
+          font-family: 'Oxygen', sans-serif;
+          text-align: justify ;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 18px;
+          line-height: 23px;
+          background-color:#DFF0F2;
+          margin-left: 30px;
+      }
+  /* Diseño de SignUp */
+  .mobileSignup, .mobileLogin{
+    display:none;
+  }
+  .desktopSignup, .desktopLogin{
+    display:block;
+  }
+  .containerRight{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .imageSignup{
+    width: 27em;
+    margin-right: 10em;
+    margin-left: 10em;
+  }
+  .signUpTextButtons{
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 8%;
+    /* margin-top: 30px; */
+  }
+  .signUpTextButtons p {
+    font-family: 'Oxygen', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 5px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color:#DFF0F2;
+  }
+  header{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    width: 100%;
+    height: 80px;
+    margin-top: 60px;
+  }
+
+  h1 {
+    display: flex;
+    align-items: center;
+    margin-right: 30%;
+      }
+  h2, h3{
+    margin-bottom: 5px;;
+  }
+  /* h3{
+    margin-top: 5px;
+  } */
+  .containerLeft{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .aboutTextSignup{
+    display: flex-block;
+    width: 50%;
+    margin-right: 10em;
+    margin-left: 5em;
+  }
+  .aboutTextSignup p {
+      padding: .5em;
+      font-family: 'Oxygen', sans-serif;
+      text-align: justify ;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 23px;
+      background-color:#DFF0F2;
+      margin-left: 10px;
+  }
+  /* Diseño de LogIn */
+  .mobileLogin{
+    display:none;
+  }
+  .desktopLogin{
+    display:block;
+  }
+  .containerLoginOne{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .imageLogin{
+    width: 27em;
+    margin-right: 10em;
+    margin-left: 10em;
+  }
+  .loginTextButtons{
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 8%;
+    margin-top: 60px;
+  }
+
+  h3 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    margin-top: 5px;
+    font-family: 'Amatic SC';
+    font-size: 55px;
+    align-items: center;
+    text-align: center;
+    color: #3E8C59;
+    margin-bottom: 5px;
+    background-color:#DFF0F2;
+  }
+
+  .containerText{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .aboutTextLogin{
+    display: flex-block;
+    width: 50%;
+    margin-right: 10em;
+    margin-left: 5em;
+  }
+  .aboutTextLogin p {
+      padding: .5em;
+      font-family: 'Oxygen', sans-serif;
+      text-align: justify ;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 23px;
+      background-color:#DFF0F2;
+      margin-left: 10px;
+  }
+
+  .mailUser, .passwordNewUser, .buttonLog, .buttonLogGoogle{
+    margin-bottom: 25px;
+  }
 
 /*Diseño del timeline*/
 
@@ -661,50 +816,51 @@ h1 {
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
+  height: 120px;
   width: 90%;
-  margin-left:5%;
-  margin-right:5%;
+  margin: .5em, 1em, .5em, 1em;
 }
 
 .iconApp{
-  width: 90px;
+  width: 130px;
   height: auto;
 }
 
 .iconUser{
-    width:60px;
+    width:90px;
     height: auto;
 
 }
 #section{
+  display:flex;
   justify-content: center;
+  align-items: center;
   flex-direction:  column;
   overflow-y: scroll;
 }
+
 .divTextArea{
   display: flex;
   justify-content: center;
-  align-content: center;
   align-items: center;
+  align-content: center;
   flex-flow: column nowrap;
   width: 90%;
-  height: 130px;
-  margin-top: 170px;
+  height: 200px;
+  margin-top: 30px;
 }
 .textAreaPostBlue{
   display: flex;
   justify-content: center;
+  align-items: center;
   align-content: center;
   flex-flow: column nowrap;
-  width: 90%;
-  height: 140px;
+  width: 80%;
+  height: 220px;
   margin-left:5%;
   margin-right:5%;
-  margin-bottom: 20%;
   background: #79C1BD;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
 }
 
 /*Crear post*/
@@ -713,8 +869,8 @@ h1 {
   justify-content: center;
   align-content: center;
   flex-flow: column wrap;
-  width: 355px;
-  height: 100px;
+  width: 85%;
+  height: 200px;
   margin-left:5%;
   margin-right:5%;
   /* margin-bottom: 30%; */
@@ -729,10 +885,10 @@ h1 {
   justify-content: center;
   align-items: center;
   border: none;
-  width:80%;
+  width:95%;
+  height:120px;
   background-color: #FFFFFF;
   border-radius: 6px;
-
 }
 
 .buttonNewPost{
@@ -740,14 +896,21 @@ h1 {
   flex-flow: row wrap;
   justify-content: flex-end;
   align-items: center;
-  width: 80px;
-  margin-top: 10px;
+  text-align: center;
+  width: 110px;
+  margin-top: 20px;
+  margin-right:25px;
   background: #E3F2F4;
   border: none;
   border-radius: 25px;
+  font-size: 15px;
 }
 
 /* old Post, timeline*/
+.postSection{
+background-color: royalblue;
+}
+
 .containerPost{
     display: flex;
     justify-content: center;
@@ -756,25 +919,36 @@ h1 {
     width: 300px;
     height: 100px;
     margin-left: 5%;
-    margin-top: 320px;
+    margin-top: 450px;
+    background-color: rgb(63, 191, 207);
 }
+
 .postCard{
     display: flex;
-    flex-direction: column ;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     align-content: center;
-    margin-top: 30px;
+    width:900px;
+    height:500px;
+    margin-right: 100px;
+    margin-left: 50px;
+    background-color: red;
 }
+
 .textContainer{
     display: flex;
     flex-direction: column-reverse ;
     justify-content: center;
     align-items: center;
     align-content: center;
-    background: #FFFFFF;
+    background: #7d43da;
     overflow: scroll;
-    width: 350px;
-    height: 100px;
+    width: 920px;
+    height: 150px;
+    margin-left:15%;
+    margin-right:15%;
+
 }
 
 .oldPostMenu{
@@ -782,10 +956,11 @@ h1 {
     justify-content: space-around;
     align-items: center;
     align-content: center;
-    background: #FFFFFF;
+    background: #33f103;
     box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.1);
     border-radius: 6px;
-    width: 350px;
+    width: 920px;
+    height: 50px;
     margin-bottom: 20px;
 }
 .likeImg, .editText, .deleteText, p{
