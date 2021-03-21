@@ -2,27 +2,32 @@ import { onNavigate } from '../lib/routes.js';
 import { store } from '../lib/firebase.js';
 
 export const timeline = `
-<header>
-  <div class = "headTimeline">
-    <img class="iconApp" src="assets/img/imagendeportada.png"></img>
-    <img class="iconUser" src="assets/img/woman.svg"></img>
-  </div>
-</header>
-<section id="section">
-<div class="divTextArea">
-    <div class= "textAreaPostBlue">
-      <textarea text="textArea" class="textPost" id="textPost" rows="5" cols="40" maxlength="200" placeholder="¿Qué te gustaría compartir?"></textarea>
-      <button class="buttonNewPost" id="buttonNewPost"> Compartir </button>
+  <header class="timelineHeader">
+    <div class = "headTimeline">
+      <img class="iconApp" src="assets/img/imagendeportada.png">
+      <img class="iconUser" src="assets/img/woman.svg">
     </div>
-</div>
-  <div class="postSection">
-  <div class="containerPost" id="allPost"></div>
-  </div>
-</section>
-  <nav class="menuNavigate">
-  <img class="menuImg" id="goTimeline" src="assets/img/home-page.svg"></img>
-  <img class="menuImg" id="close" src="assets/img/on-off-button.svg"></img>
-  </nav>`;
+  </header>
+  <section id="section">
+    <div class="divTextArea">
+      <div class= "textAreaPostBlue">
+        <textarea text="textArea" class="textPost" id="textPost" rows="5" cols="40" maxlength="200" placeholder="¿Qué te gustaría compartir?"></textarea>
+        <button class="buttonNewPost" id="buttonNewPost"> Compartir </button>
+      </div>
+    </div>
+    <div class="postSection">
+      <div class="containerPost" id="allPost"></div>
+    </div>
+  </section>
+    <nav class="menuNavigate">
+      <img class="iconAppTwo" src="assets/img/imagendeportada.png">
+      <div class="textAppNavigate">
+        <h3>ECO APP</h3>
+      </div>
+        <img class="menuImg" id="goTimeline" src="assets/img/home-page.svg">
+        <img class="menuImg" id="close" src="assets/img/on-off-button.svg">
+    </nav>
+`;
 
 // Esta es la función que guarda la data en Firestore
 export const savePost = () => {
@@ -58,8 +63,12 @@ export const getDataOne = () => {
           <div class="oldPostMenu">
             <img class="likeImg" id="likeImage" src="assets/img/growing-plant-svgrepo.svg"></>
             <p class="numLike"> </p>
-              <button class="editText"> Editar </button>
-            <button class="deleteText" data-id='${doc.id}'> Eliminar</button>
+              <div class="buttonEdit">
+                <button class="editText"> Editar </button>
+              </div>
+              <div class="buttonDelete">
+                <button class="deleteText" data-id='${doc.id}'> Eliminar </button>
+              </div>
           </div>
         </div>`;
       });
