@@ -365,12 +365,6 @@ hr {
     height: auto;
 
 }
-/* .postSection{
-  justify-content: center;
-  flex-direction:  column;
-
-} */
-
 /*Crear post*/
 #section{
   justify-content: center;
@@ -395,6 +389,7 @@ textarea {
   width: 355px;
   height: 150px;
   background: #79C1BD;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
   border-radius: 6px;
 }
@@ -422,72 +417,96 @@ textarea {
   text-align: center;
 
 }
-/* old Post, timeline*/
+/* Donde se renderizan los post */
+.postSection{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    height: auto;
+    /* background-color: blue; */
+}
 .containerPost{
     display: flex;
-    justify-content: center;
-    align-content: center;
+    /* justify-content: center; */
+    /* align-content: center; */
     flex-direction: column ;
-    width: 300px;
-    height: 100px;
-    margin-left: 5%;
-    margin-top: 320px;
+    /* width: 300px; */
+    /* height: auto; */
+    /* margin-left: 5%; */
+    /* background-color: brown; */
 }
 .postCard{
     display: flex;
     flex-direction: column ;
-    justify-content: center;
+    /* justify-content: center; */
     align-content: center;
-    margin-top: 30px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    height: auto;
+    margin-bottom: 20px;
 }
 .textContainer{
     display: flex;
     flex-direction: column-reverse ;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     align-content: center;
-    background: #FFFFFF;
-    overflow: scroll;
+    background-color: #FFFFFF;
+    /* overflow: scroll; */
     width: 350px;
-    height: 100px;
+    /* height: 100px; */
+    height: auto;
+    border-radius: 6px 6px 0px 0px;
 }
-
+.textContainer >p{
+    background-color: #FFFFFF;
+    font-family: 'Oxygen', sans-serif;
+    color: #8B8383;
+    font-size: 16px;
+    text-align: justify;
+    margin: 15px;
+}
 .oldPostMenu{
     display: flex;
     justify-content: space-around;
     align-items: center;
     align-content: center;
     background: #FFFFFF;
-    box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 6px;
+    box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 0px 0px 6px 6px;
     width: 350px;
-    margin-bottom: 20px;
-}
-.likeImg, .editText, .deleteText, p{
-    background-color: #FFFFFF;
+    /* margin-bottom: 15px; */
 }
 .likeImg{
-    width:20px;
-    height: 30px;
-    /* height: auto; */
+  width:20px;
+  height: 30px;
+  background-color: #FFFFFF;
+  /* height: auto; */
 }
-.likeImg:hover{
-    transform: scale(1.03);
-    background: #3E8C5A;
+.oldPostMenu >p{
+  width: 150px;
 }
-.editText, .deleteText{
-    display:flex;
+.buttonDelete{
+    /* justify-self: flex-end; */
+    border-left-style: solid;
+    color: #8B8383;
+    /* display:flex;
     justify-content: center;
     justify-content: space-evenly;
     width: 80px;
-    height: 25px;
-    border: none;
-  align-self: flex-end;
-  font-family: 'Oxygen', sans-serif;
-  font-size: 15px;
-  color: #8B8383;
-  text-align: center;
+    height: 25px; */
 }
+.editText, .deleteText{
+    border: none;
+    /* width: 80px; */
+    /* height: 25px; */
+    font-family: 'Oxygen', sans-serif;
+    font-size: 15px;
+    color: #8B8383;
+    background-color: #FFFFFF;
+    text-align: center;
+}
+
 /*Menu de navegación*/
 .menuNavigate{
   display:flex;

@@ -9,9 +9,9 @@ export const timeline = `
     </div>
   </header>
   <section id="section">
-    <div class="divTextArea">
+    <div class="divTextArea" id="postForm">
       <div class= "textAreaPostBlue">
-        <textarea text="textArea" class="textPost" id="textPost" rows="5" cols="40" maxlength="200" placeholder="¿Qué te gustaría compartir?"></textarea>
+        <textarea text="textArea" class="textPost" id="textPost" rows="5" cols="40" maxlength="500" placeholder="¿Qué te gustaría compartir?"></textarea>
         <button class="buttonNewPost" id="buttonNewPost"> Compartir </button>
       </div>
     </div>
@@ -28,6 +28,12 @@ export const timeline = `
         <img class="menuImg" id="close" src="assets/img/on-off-button.svg">
     </nav>
 `;
+// almacene el estado de la aplicación
+let editStatus = false;
+let id = '';
+
+const getPost = (ids) => store.collection('post').doc(ids).get();
+const updatePost = (ids, updatedPost) => store.collection('post').doc(ids).update(updatedPost);
 
 // Esta es la función que guarda la data en Firestore
 export const savePost = () => {
@@ -64,13 +70,29 @@ export const getDataOne = () => {
             <img class="likeImg" id="likeImage" src="assets/img/growing-plant-svgrepo.svg"></>
             <p class="numLike"> </p>
               <div class="buttonEdit">
-                <button class="editText"> Editar </button>
+                <button class="editText" data-id='${doc.id}'> Editar </button>
               </div>
               <div class="buttonDelete">
                 <button class="deleteText" data-id='${doc.id}'> Eliminar </button>
               </div>
           </div>
         </div>`;
+
+        const btnEdit = document.querySelectorAll('.buttonEdit');
+        btnEdit.forEach((btn) => {
+          btn.addEventListener('click', async (e) => {
+            try {
+              const docPost = await getPost(e.target.dataset.id);
+              console.log(docPost.data());
+              document.getElementById('textPost').value = docPost.data().note;
+              editStatus = true;
+              id = docPost.id;
+              document.getElementById('buttonNewPost').innerText = 'Actualizar';
+            } catch (error) {
+              console.log(error);
+            }
+          });
+        });
       });
     });
 };
@@ -81,16 +103,13 @@ export function timelineView(container) {
   getDataOne();
 }
 
-// const updatePostOne = (id) => {
-//   store.collection('post').doc(id).update({
-//     note: myPost,
-//   }).then(() => {
-//     console.log('se actualizó documento');
-//   })
-//     .catch((error) => {
-//       console.log(error);
-//     });
-// };
+// función para editar data
+const btnEdit = document.querySelectorAll('.buttonEdit');
+btnEdit.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    console.log(e.target.dataset.id);
+  });
+});
 
 const deleteDataOne = (postId) => {
   store.collection('post').doc(postId).delete()
@@ -102,11 +121,28 @@ const deleteDataOne = (postId) => {
     });
 };
 
-document.addEventListener('click', (e) => {
+document.addEventListener('click', async (e) => {
   // guardar post
   if (e.target.matches('#buttonNewPost')) {
     e.preventDefault();
-    savePost();
+    const note = document.getElementById('textPost');
+    try {
+      // editar post
+      if (!editStatus) {
+        await savePost(note.value);
+      } else {
+        await updatePost(id, {
+          note: note.value,
+        });
+        editStatus = false;
+        id = '';
+        document.getElementById('buttonNewPost').innerText = 'compartir';
+      }
+      document.getElementById('textPost').value = '';
+      note.focus();
+    } catch (error) {
+      console.log(error);
+    }
     getDataOne();
   }
   // borrar post
