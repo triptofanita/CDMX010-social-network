@@ -107,12 +107,11 @@ h1{
 
 .back {
     display: flex;
-    font-family: 'Oxygen', sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 25px;
-    background:none;
-    text-decoration:none;
+    align-self: flex-start;
+    width: 2em;
+    margin-top: 10px;
+    margin-left: 15px;
+    background-color:white;
 }
 /* es la barrita de separación */
 hr {
@@ -132,16 +131,15 @@ hr {
     display: none;
 }
 
-.aboutText p {
+.aboutText >p {
     padding: .5em;
     font-family: 'Oxygen', sans-serif;
     text-align: justify ;
-    font-style: normal;
-    font-weight: normal;
     font-size: 18px;
     line-height: 23px;
+    color: #8B8383;
     background-color: white;
-    width: 70%;
+    width: 80%;
     height: 90%;
 }
 /*div contenedor de la imagen planta*/
@@ -421,25 +419,18 @@ textarea {
 .postSection{
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     height: auto;
     /* background-color: blue; */
+    padding-bottom: 65px;
 }
 .containerPost{
     display: flex;
-    /* justify-content: center; */
-    /* align-content: center; */
-    flex-direction: column ;
-    /* width: 300px; */
-    /* height: auto; */
-    /* margin-left: 5%; */
-    /* background-color: brown; */
+    flex-direction: column;
 }
 .postCard{
     display: flex;
     flex-direction: column ;
-    /* justify-content: center; */
     align-content: center;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     height: auto;
@@ -448,13 +439,11 @@ textarea {
 .textContainer{
     display: flex;
     flex-direction: column-reverse ;
-    /* justify-content: center; */
     align-items: center;
     align-content: center;
     background-color: #FFFFFF;
     /* overflow: scroll; */
     width: 350px;
-    /* height: 100px; */
     height: auto;
     border-radius: 6px 6px 0px 0px;
 }
@@ -475,7 +464,6 @@ textarea {
     box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.05);
     border-radius: 0px 0px 6px 6px;
     width: 350px;
-    /* margin-bottom: 15px; */
 }
 .likeImg{
   width:20px;
@@ -487,19 +475,11 @@ textarea {
   width: 150px;
 }
 .buttonDelete{
-    /* justify-self: flex-end; */
     border-left-style: solid;
     color: #8B8383;
-    /* display:flex;
-    justify-content: center;
-    justify-content: space-evenly;
-    width: 80px;
-    height: 25px; */
 }
 .editText, .deleteText{
     border: none;
-    /* width: 80px; */
-    /* height: 25px; */
     font-family: 'Oxygen', sans-serif;
     font-size: 15px;
     color: #8B8383;
@@ -519,9 +499,6 @@ textarea {
   margin: 0;
   padding: 0;
   background-color: #FFFFFF;
-  /* margin-left:10%;
-  margin-right:10%;
-  margin-top:120px; */
 }
 
 .menuImg{
@@ -667,11 +644,10 @@ margin-left: 13em;
   display:block;
 }
 
-.aboutTextHome p {
+.aboutTextHome >p {
   padding: .5em;
   font-family: 'Oxygen', sans-serif;
   text-align: justify ;
-  font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 23px;
@@ -868,10 +844,10 @@ h3 {
 
 .textAppNavigate{
   display:block;
-  width: 140px;
-  height: 25px;
+  width: 9%;
+  height: 60%;
   margin-left: -132%;
-  margin-top: -5%;
+  margin-top:-3.5%;
   background-color: #FFFFFF;
 }
 
@@ -1000,6 +976,7 @@ font-size: 40px;
   height:auto;
   margin-right: 80px;
   margin-left: 60px;
+  margin-top: 20px;
 }
 
 .textContainer{
@@ -1026,7 +1003,7 @@ font-size: 40px;
   height: 50px;
   margin-left: 15%;
   margin-right: 15%;
-  margin-bottom: 20px
+  /* margin-bottom: 20px */
 }
 
 .likeImg, .editText, .deleteText, p{
@@ -1060,7 +1037,7 @@ font-size: 40px;
 }
 
 .buttonEdit{
-  margin-left: 650px;
+  margin-left: 50%;
   width:13%;
 }
 

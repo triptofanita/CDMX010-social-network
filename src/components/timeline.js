@@ -62,12 +62,12 @@ export const getDataOne = () => {
       querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data()}`);
         renderData.innerHTML += `
-        <div class= "postCard" data-id='${doc.id}'>
-          <div class ="textContainer">
+        <div class="postCard" data-id='${doc.id}'>
+          <div class="textContainer">
             <p id=${doc.id}>${doc.data().note}</p>
           </div>
           <div class="oldPostMenu">
-            <img class="likeImg" id="likeImage" src="assets/img/growing-plant-svgrepo.svg"></>
+            <img class="likeImg" id="likeImage" src="assets/img/growing-plant-svgrepo.svg">
             <p class="numLike"> </p>
               <div class="buttonEdit">
                 <button class="editText" data-id='${doc.id}'> Editar </button>

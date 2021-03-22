@@ -2,7 +2,7 @@ import { onNavigate } from '../lib/routes.js';
 
 export const about = `
   <div class= "aboutContainer">
-  <a class="back" id="iconBack" href="#"> <- </a>
+  <img class="back" id="iconBack href="#" src="assets/img/back.svg">
   <hr>
     <div class = "aboutText">
       <p> Eco App es una comunidad de usuarios interesados en compartir iniciativas y experiencias vinculadas a la ecología y al desarrollo sostenible.
