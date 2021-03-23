@@ -184,7 +184,6 @@ hr {
 }
 
 /* //Inputs */
-
 .dataNewUser{
     display:flex;
     flex-direction: column;
@@ -217,7 +216,6 @@ hr {
     flex-direction: column;
     align-items: center;
     margin-top: 30px;
-
 }
 
 /* botones Sign Up */
@@ -405,7 +403,6 @@ textarea {
   font-size: 12px;
   color: #8B8383;
   text-align: center;
-
 }
 /* Donde se renderizan los post */
 .postSection{
@@ -489,9 +486,9 @@ textarea {
   padding: 0;
   background-color: #FFFFFF;
   color: #8B8383;
-
 }
-.textAppNavigate{
+
+/*.textAppNavigate{
   background-color: #FFFFFF;
   font-family: 'Amatic SC';
   font-size: 30px;
@@ -505,7 +502,7 @@ textarea {
   font-size: 30px;
   color: #3E8C59;
   text-align: center;
-}
+}*/
 
 .menuImg{
   width: 30px;
