@@ -2,9 +2,7 @@ import { home } from '../components/home.js';
 import { about } from '../components/about.js';
 import { signUp } from '../components/signup.js';
 import { login } from '../components/login.js';
-import { timeline } from '../components/timeline.js';
-import { profile } from '../components/profile.js';
-import { groups } from '../components/groups.js';
+import { timelineView } from '../components/timeline.js';
 import { emailVerification } from '../components/emailVerification.js';
 
 export const routes = {
@@ -13,13 +11,11 @@ export const routes = {
   '/signUp': signUp,
   '/login': login,
   '/emailVerification': emailVerification,
-  '/timeline': timeline,
-  '/profile': profile,
-  '/groups': groups,
+  '/timeline': timelineView,
 };
 
 export const rootDiv = document.getElementById('root');
-rootDiv.innerHTML = routes[window.location.pathname];
+// rootDiv.innerHTML = routes[window.location.pathname];
 
 export const onNavigate = (pathname) => {
   window.history.pushState(
@@ -27,9 +23,16 @@ export const onNavigate = (pathname) => {
     pathname,
     window.location.origin + pathname,
   );
-  rootDiv.innerHTML = routes[pathname];
+  if (pathname === '/timeline') {
+    const init = routes[pathname];
+    init(rootDiv);
+  } else {
+    rootDiv.innerHTML = routes[pathname];
+  }
 };
 
-window.addEventListener('DOMContentLoaded', () => {
-  routes;
-});
+onNavigate(window.location.pathname);
+
+// window.addEventListener('DOMContentLoaded', () => {
+//   routes;
+// });
