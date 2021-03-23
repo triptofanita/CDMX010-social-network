@@ -17,13 +17,11 @@ Cómo realizar un huerto urbano.
 Cómo captar agua.
 Consumo y mercado local.
 Transporte sustentable.
-Eco App es una aplicación que permite la concentración de usuarios interesados en      los temas mencionados, información que muchas veces pasa desapercibida en el timeline de otras redes sociales.
-
+Eco App es una aplicación que permite la concentración de usuarios interesados en los temas mencionados, información que muchas veces pasa desapercibida en el timeline de otras redes sociales.
 
 ## 2. Resumen del proyecto 📋
 ECOAPP, nuestra red social, surge con el  objetivo de fomentar el diálogo e intercambio de información sobre temas de sustentabilidad.
 Nuestros principales usuarios son personas preocupadas por el medio ambiente e interesadas en compartir experiencias e iniciativas vinculadas a la ecología y al desarrollo sostenible
-
 
 ## 3. Historias de usuario 🤳
 
@@ -38,24 +36,20 @@ Las historias de usuario que desarrollamos para nuestra red social son:
 ## 4. Proceso 🛠️
 #### Prototipado 📲
 El diseño de nuestra aplicación fue desarrollado a partir de la metodología mobile first, esto fue esencial para mejorar la experiencia de usuario.  Después de diseñar las pantallas para la versión móvil los elementos se adaptaron para un navegador de escritorio.
-<img src="/README/testab.jpg" alt="Prototipo para el AB test" width="850" height="510"/>/>
-<img src="/README/prototipobaja1.jpg" alt="Primeros prototipos" width="850" height="510"/>/>
-<img src="/README/prototipobaja2.jpg" alt="Primeros prototipos" width="850" height="510"/>
-<img src="/README/prototipobaja3.jpg" alt="Primeros prototipos" width="850" height="510"/>
 
+<img src="/README ECOAPP/testab.JPG" alt="Prototipo para el AB test" width="850" height="510"/>
+<img src="/README ECOAPP/prototipobaja1.jpg" alt="Primeros prototipos" width="850" height="510"/>
+<img src="/README ECOAPP/prototipobaja2.jpg" alt="Primeros prototipos" width="850" height="510"/>
+<img src="/README ECOAPP/prototipobaja3.jpg" alt="Primeros prototipos" width="850" height="510"/>
 
 #### Prototipos de alta fidelidad 🖥
-Nuestros prototipos de baja fidelidad fueron testeados mediante un A/B test con un grupo de 6 potenciales usuarios ajenos a Laboratoria. Con base en estos resultados, iteramos hasta obtener la versión final y  poder continuar con el prototipado de alta fidelidad. (agregar imágenes de los prototipos que están en Trello)
+Nuestros prototipos de baja fidelidad fueron testeados mediante un A/B test con un grupo de 6 potenciales usuarios ajenos a Laboratoria. Con base en estos resultados, iteramos hasta obtener la versión final y  poder continuar con el prototipado de alta fidelidad.
 Puedes ver el [resultado final en Figma](https://www.figma.com/proto/UEqZ6uWdkdEGeXjc8rdZv8/Untitled?node-id=6%3A10&scaling=min-zoom)
 
-<img src="/README/prototipos-altafidelidad.png" alt="Prototipos de alta fidelidad" width="850" height="510"/>
-
+<img src="/README ECOAPP/prototipos-altafidelidad.png" alt="Prototipos de alta fidelidad" width="950" height="400"/>
 
 ### Retrospectiva 💛
 A lo largo de este proyecto, nos encontramos constantemente con retos y desafíos.
 El primero de ellos fue desarrollar por primera vez una `SPA`, y con ello el correcto routing.
 Uno de los primeros retos a los que nos enfrentamos fue establecer mediante Vanilla Javascript la lógica del router de una Single Page Application, para lograrlo usamos los métodos: `history.pushState()` y la propiedad `location.origin` del objeto. Esta implementación funciona exitosamente.
 Para la creación y gestión de datos en una red social basamos las funcionalidades de la aplicación en `CRUD` (create, read, update and delete data), siguiendo la propuesta de Laboratoria para este proyecto, usamos una base de datos no relacional: Firebase. A través de esta plataforma logramos registrar a los usuarios con correo electrónico y contraseña, las cuentas registradas son autenticadas a partir de un enlace enviado al correo electrónico del usuario. Para que  los usuarios puedan realizar publicaciones, borrarlas o editarlas usamos Cloud Firestore. En el equipo de desarrollo reconocemos como área de oportunidad el conteo de likes en una publicación.
-
-
-
