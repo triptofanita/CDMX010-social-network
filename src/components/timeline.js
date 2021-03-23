@@ -21,9 +21,9 @@ export const timeline = `
   </section>
     <nav class="menuNavigate">
       <img class="iconAppTwo" src="assets/img/imagendeportada.png">
-      <div class="textAppNavigate">
+      <span class="textAppNavigate">
         <h3>ECO APP</h3>
-      </div>
+      </span>
         <img class="menuImg" id="goTimeline" src="assets/img/home-page.svg">
         <img class="menuImg" id="close" src="assets/img/on-off-button.svg">
     </nav>
