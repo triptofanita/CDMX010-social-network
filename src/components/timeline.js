@@ -28,6 +28,7 @@ export const timeline = `
         <img class="menuImg" id="close" src="assets/img/on-off-button.svg">
     </nav>
 `;
+
 // almacene el estado de la aplicación
 let editStatus = false;
 let id = '';

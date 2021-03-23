@@ -37,9 +37,6 @@ export const login = `
         <button class="buttonLog" id="login" href="#">Iniciar Sesión</button>
         <button class="buttonLogGoogle" id="loginGoogle" href="#">Iniciar con Google</button>
       </div>
-      <div class="forgottenPass">
-        <a class="newPass" href="#">¿Olvidaste tu contraseña?</a>
-      </div>
       </div>
       </div>
       <div class="containerText">
@@ -61,35 +58,35 @@ document.addEventListener('click', (e) => {
 });
 
 // // login con cuenta google en redirección
-// document.addEventListener('click', (e) => {
-//   if (e.target.matches('.buttonLogGoogle')) {
-//     console.log('login con google');
-//     e.preventDefault();
+document.addEventListener('click', (e) => {
+  if (e.target.matches('.buttonLogGoogle')) {
+    console.log('login con google');
+    e.preventDefault();
 
-//     const GoogleAuth = new firebase.auth.GoogleAuthProvider();
-//     // registro con cuenta google
-//     firebase.auth().signInWithRedirect(GoogleAuth).then((result) => {
-//       const credential = result.credential;
-//       // This gives you a Google Access Token. You can use it to access the Google API.
-//       const token = credential.accessToken;
-//       // The signed-in user info.
-//       const user = result.user;
-//       console.log(user.displayName);
-//       // ..
-//     }).catch((error) => {
-//       // Handle Errors here.
-//       const errorCode = error.code;
-//       console.log(errorCode);
-//       const errorMessage = error.message;
-//       console.log(errorMessage);
-//       // The email of the user's account used.
-//       const email = error.email;
-//       console.log(email);
-//       // The firebase.auth.AuthCredential type that was used.
-//       const credential = error.credential;
-//       console.log(credential);
-//       // ...
-//       alert('oops! intentalo de nuevo');
-//     });
-//   }
-// });
+    const GoogleAuth = new firebase.auth.GoogleAuthProvider();
+    // registro con cuenta google
+    firebase.auth().signInWithRedirect(GoogleAuth).then((result) => {
+      const credential = result.credential;
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const token = credential.accessToken;
+      // The signed-in user info.
+      const user = result.user;
+      console.log(user.displayName);
+      // ..
+    }).catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      console.log(errorCode);
+      const errorMessage = error.message;
+      console.log(errorMessage);
+      // The email of the user's account used.
+      const email = error.email;
+      console.log(email);
+      // The firebase.auth.AuthCredential type that was used.
+      const credential = error.credential;
+      console.log(credential);
+      // ...
+      alert('oops! intentalo de nuevo');
+    });
+  }
+});

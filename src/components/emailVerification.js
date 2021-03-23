@@ -4,16 +4,18 @@ import { userValidation } from '../lib/authFirebase.js';
 
 export const emailVerification = `
   <div class= "verification">
-  <p>Tu correo aun no está validado, verifica tu correo o pica aquí para enviarte para validar continuar</p>
-    <div class = "sendVerification">
-    <button class= "emailVerified">Enviar email de Verificación</button>
+    <p>Revisa tu correo o haz click para enviarte un enlace de validación</p>
+      <div class = "sendVerification">
+      <button class= "emailVerified">Enviar email de Verificación</button>
+      </div>
+    <div class="goLoginContainer">
+      <p>¿Ya tienes una cuenta verificada? Mira aquí</p>
+      <a class="goLogin" href="">Iniciar Sesión</a>
     </div>
-    <p>¿ya tienes una cuenta verificada? mira aquí</p>
-    <a class="goLogin" href="">Loguin</a>
   </div>
   <div class= "verifiedImg">
-  <img class="verifiedImage" src="assets/img/growing-plant-svgrepo.svg"></img>
-</div>
+    <img class="verifiedImage" src="assets/img/growing-plant-svgrepo.svg"></img>
+  </div>
 `;
 document.addEventListener('click', (e) => {
   if (e.target.matches('.emailVerified')) {

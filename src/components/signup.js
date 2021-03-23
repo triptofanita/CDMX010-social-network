@@ -38,8 +38,6 @@ export const signUp = `
           <div class="buttonContainer">
           <button class="buttonGoogle" id="signUpGoogle">Continuar con Google</button>
          </div>
-          <div class ="errorAlert">
-          </div>
           <button class="buttonSend" id="signUpSend">Enviar</button>
         </div>
       </div>
