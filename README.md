@@ -7,8 +7,6 @@
 * [3. Historias de usuario](#3-historias-de-usuario)
 * [4. Retrospectiva de aprendizajes](#4-retrospectiva-de-aprendizaje)
 
-***
-<<<<<<< HEAD
 
 ## 1. Preámbulo  📖
 Ante el flujo masivo de información general y la publicación de “fake news”, los usuarios interesados en temas sobre el cuidado al medio ambiente buscan información oportuna y veraz. Este grupo de usuarios es extenso y diverso, sus temas frecuentes de búsqueda son los siguientes:
@@ -39,10 +37,10 @@ Las historias de usuario que desarrollamos para nuestra red social son:
 ## 4. Proceso 🛠️
 #### Prototipado
 El diseño de nuestra aplicación fue desarrollado a partir de la metodología mobile first, esto fue esencial para mejorar la experiencia de usuario.  Después de diseñar las pantallas para la versión móvil los elementos se adaptaron para un navegador de escritorio.
-<img src="/README/testab.jpg" alt="Prototipo para el AB test" width="850" height="510"/>/>
-<img src="/README/prototipobaja1.jpg" alt="Primeros prototipos" width="850" height="510"/>/>
-<img src="/README/prototipobaja2.jpg" alt="Primeros prototipos" width="850" height="510"/>
-<img src="/README/prototipobaja3.jpg" alt="Primeros prototipos" width="850" height="510"/>
+<img src="/READMEECOAPP/testab.jpg" alt="Prototipo para el AB test" width="850" height="510"/>
+<img src="/READMEECOAPP/prototipobaja1.jpg" alt="Primeros prototipos" width="850" height="510"/>
+<img src="/READMEECOAPP/prototipobaja2.jpg" alt="Primeros prototipos" width="850" height="510"/>
+<img src="/READMEECOAPP/prototipobaja3.jpg" alt="Primeros prototipos" width="850" height="510"/>
 
 
 #### Prototipos de alta fidelidad
