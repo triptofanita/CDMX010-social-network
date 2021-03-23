@@ -488,21 +488,18 @@ textarea {
   color: #8B8383;
 }
 
-/*.textAppNavigate{
+.textAppNavigate{
   background-color: #FFFFFF;
-  font-family: 'Amatic SC';
-  font-size: 30px;
-  color: #3E8C59;
-  text-align: center;
+  height: 0%;
+  margin-bottom: 95px;
 }
-
 .textAppNavigate h3{
   background-color: #FFFFFF;
   font-family: 'Amatic SC';
   font-size: 30px;
   color: #3E8C59;
   text-align: center;
-}*/
+}
 
 .menuImg{
   width: 30px;
@@ -841,7 +838,8 @@ h3 {
   display:block;
   width: 6%;
   height: 100%;
-  margin-left: -.4%;
+  margin-top: 0%;
+  margin-left: -.5%;
   background-color: #FFFFFF;
 }
 
@@ -850,17 +848,21 @@ h3 {
   width: 140px;
   height: 25px;
   margin-left: -132%;
-  margin-top:5%;
+  margin-top:-5%;
 }
 
 .textAppNavigate h3{
   background-color: #FFFFFF;
+  height: 0%;
+  margin-top: 65%;
+  font-size: 40px;
 }
 
 .menuImg{
   width: 30px;
   padding: 20px;
-  margin-top: 1px;
+  margin-top: 3px;
+  margin-bottom: 5px;
   margin-left: -100%;
   margin-right: 4%;
 }
