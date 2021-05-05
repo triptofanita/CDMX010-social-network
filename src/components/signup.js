@@ -16,7 +16,7 @@ export const signUp = `
       <button class="buttonSend" id="signUpSend">enviar</button>
     </div>
     <div class="buttonContainer">
-        <button class="buttonGoogle" id="signUpGoogle">Continuar con Google</button>
+
     </div>
   </div>
 </div>
@@ -36,8 +36,7 @@ export const signUp = `
           <input type="text" id="mailNewUserD" class="mailNewUser" placeholder="Correo"> </input>
           <input type="password" id="passwordNewUserD" class="passwordNewUser" placeholder="Contraseña"></input>
           <div class="buttonContainer">
-          <button class="buttonGoogle" id="signUpGoogle">Continuar con Google</button>
-         </div>
+          </div>
           <button class="buttonSend" id="signUpSend">Enviar</button>
         </div>
       </div>
