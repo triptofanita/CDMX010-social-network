@@ -13,7 +13,7 @@ export const login = `
           </div>
           <div class="buttonLogContainer">
               <button class="buttonLog" id="login" href="#">Iniciar Sesión</button>
-              <button class="buttonLogGoogle" id="loginGoogle" href="#">Iniciar con Google</button>
+
           </div>
           <div class="forgottenPass">
               <a class="newPass" href="#">¿Olvidaste tu contraseña?</a>
@@ -35,7 +35,7 @@ export const login = `
         </div>
       <div class="buttonLogContainer">
         <button class="buttonLog" id="login" href="#">Iniciar Sesión</button>
-        <button class="buttonLogGoogle" id="loginGoogle" href="#">Iniciar con Google</button>
+
       </div>
       </div>
       </div>
